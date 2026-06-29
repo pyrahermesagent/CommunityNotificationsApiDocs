@@ -22,6 +22,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* === Global Box Sizing === */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 /* === Code Blocks === */
 .vp-doc pre,
 .vp-doc code {
@@ -69,6 +74,7 @@ html {
   background: rgba(255, 255, 255, 0.85) !important;
   border-bottom: 1px solid rgba(0,0,0,0.05) !important;
   transition: all 0.3s ease !important;
+  padding: 8px 24px !important;
 }
 
 .dark .VPNavBar {
@@ -76,9 +82,74 @@ html {
   border-bottom: 1px solid rgba(255,255,255,0.05) !important;
 }
 
-.VPNavBarTitle {
+/* === Hide VitePress default title, show our custom one === */
+.VPNavBarTitle .title {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.VPNavBarTitle .title span:first-child {
+  display: none !important;
+}
+
+/* === Logo in nav === */
+.VPNavBarTitle .title .nav-brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
   font-weight: 700 !important;
-  font-size: 1.25rem !important;
+  font-size: 1.15rem !important;
+}
+
+.VPNavBarTitle .title .nav-brand .nav-logo {
+  height: 28px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  flex-shrink: 0 !important;
+  transition: transform 0.2s ease !important;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1)) !important;
+}
+
+.dark .VPNavBarTitle .title .nav-brand .nav-logo {
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3)) brightness(1.2) !important;
+}
+
+.VPNavBarTitle .title .nav-brand .nav-logo:hover {
+  transform: scale(1.08) !important;
+}
+
+.VPNavBarTitle .title .nav-brand .nav-title {
+  white-space: nowrap !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* === Mobile Menu Toggle === */
+.VPNavBarHamburger {
+  padding: 8px !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 8px !important;
+  transition: background 0.2s ease !important;
+}
+
+.VPNavBarHamburger:hover {
+  background: rgba(0,0,0,0.05) !important;
+}
+
+.dark .VPNavBarHamburger:hover {
+  background: rgba(255,255,255,0.1) !important;
+}
+
+.VPNavBarHamburger:hover .container {
+  gap: 5px !important;
+}
+
+.VPNavBarHamburger:hover .container span {
+  background: var(--vp-c-brand) !important;
 }
 
 /* === Feature Cards (Glassmorphism) === */
@@ -128,6 +199,11 @@ html {
   background: rgba(248, 250, 252, 0.9) !important;
   backdrop-filter: blur(10px) !important;
   padding: 24px 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100vh !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain !important;
 }
 
 .dark .VPSidebar {
@@ -336,6 +412,24 @@ html {
   max-width: 600px !important;
 }
 
+/* === VPHero image === */
+.VPHero .image .image-src {
+  max-width: 180px !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  transition: transform 0.3s ease !important;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1)) !important;
+}
+
+.dark .VPHero .image .image-src {
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3)) brightness(1.1) !important;
+}
+
+.VPHero .image .image-src:hover {
+  transform: scale(1.05) !important;
+}
+
 /* === Tablet === */
 @media (min-width: 769px) and (max-width: 1024px) {
   .VPFeature .grid {
@@ -347,21 +441,162 @@ html {
 
 /* === Mobile === */
 @media (max-width: 768px) {
-  .VPNavBar { padding: 8px 16px !important; }
-  .VPHero { padding: 40px 0 30px !important; }
-  .VPHero .heading { font-size: 2.5rem !important; }
-  .VPHero .tagline { font-size: 1.1rem !important; }
-  .VPFeature { padding: 20px 16px !important; }
-  .VPFeature .grid { grid-template-columns: 1fr !important; }
-  .vp-doc { padding: 20px 16px 40px !important; font-size: 15px !important; }
-  .vp-doc h1 { font-size: 2rem !important; }
-  .vp-doc h2 { font-size: 1.5rem !important; }
-  .vp-doc h3 { font-size: 1.25rem !important; }
-  pre { font-size: 0.75rem !important; padding: 12px 16px !important; }
-  .VPButton { padding: 10px 20px !important; font-size: 0.9rem !important; }
-  .VPFeature .box { padding: 16px !important; }
-  .VPFeature .title { font-size: 1.1rem !important; }
-  .VPFeature .details { font-size: 0.9rem !important; }
+  /* Nav bar */
+  .VPNavBar {
+    padding: 6px 12px !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100 !important;
+    border-bottom-width: 1px !important;
+  }
+  
+  .VPNavBarTitle .title {
+    font-size: 0.9rem !important;
+  }
+  
+  .VPNavBarTitle .title .nav-brand {
+    gap: 6px !important;
+  }
+  
+  .VPNavBarTitle .title .nav-brand .nav-logo {
+    height: 24px !important;
+  }
+  
+  /* Hero */
+  .VPHero {
+    padding: 32px 16px 24px !important;
+  }
+  .VPHero .heading {
+    font-size: 2rem !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.01em !important;
+    margin-bottom: 12px !important;
+  }
+  .VPHero .text {
+    font-size: 1.5rem !important;
+  }
+  .VPHero .tagline {
+    font-size: 1rem !important;
+    padding: 0 8px !important;
+  }
+  .VPHero .image .image-src {
+    max-width: 110px !important;
+    margin: 16px auto 0 !important;
+  }
+  .VPHero .actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+  .VPHero .actions .action {
+    width: 100% !important;
+  }
+  .VPHero .actions .VPButton {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 14px 20px !important;
+    font-size: 1rem !important;
+    min-height: 48px !important;
+    touch-action: manipulation !important;
+  }
+  
+  /* Features */
+  .VPFeature {
+    padding: 20px 16px !important;
+  }
+  .VPFeature .grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .VPFeature .box {
+    padding: 16px !important;
+  }
+  .VPFeature .title {
+    font-size: 1.1rem !important;
+  }
+  .VPFeature .details {
+    font-size: 0.9rem !important;
+  }
+  .VPHomeFeatures .container {
+    padding: 0 16px 40px !important;
+  }
+  
+  /* Content */
+  .vp-doc {
+    padding: 20px 16px 40px !important;
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+  }
+  .vp-doc h1 {
+    font-size: 1.75rem !important;
+    margin-bottom: 16px !important;
+  }
+  .vp-doc h2 {
+    font-size: 1.4rem !important;
+    margin: 24px 0 12px !important;
+  }
+  .vp-doc h3 {
+    font-size: 1.15rem !important;
+    margin: 20px 0 10px !important;
+  }
+  .vp-doc h4, .vp-doc h5, .vp-doc h6 {
+    font-size: 1rem !important;
+  }
+  
+  /* Code blocks */
+  pre {
+    font-size: 0.7rem !important;
+    padding: 12px 14px !important;
+    border-radius: 8px !important;
+  }
+  .vp-doc code {
+    font-size: 0.8rem !important;
+    padding: 2px 6px !important;
+  }
+  
+  /* Tables */
+  .vp-doc table {
+    font-size: 0.8rem !important;
+    display: block !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    white-space: nowrap !important;
+  }
+  .vp-doc th, .vp-doc td {
+    padding: 8px 12px !important;
+  }
+  
+  /* Callouts */
+  .vp-doc .custom-block {
+    padding: 16px !important;
+    margin: 16px 0 !important;
+  }
+  
+  /* Sidebar */
+  .VPSidebar {
+    padding: 16px 0 !important;
+  }
+  
+  /* Footer */
+  .VPFooter {
+    padding: 24px 16px !important;
+  }
+}
+
+/* === Small Mobile === */
+@media (max-width: 400px) {
+  .VPHero .heading {
+    font-size: 1.65rem !important;
+  }
+  .VPNavBarTitle .title {
+    font-size: 0.85rem !important;
+  }
+  .VPNavBarTitle .title .nav-brand .nav-logo {
+    height: 22px !important;
+  }
+  .VPNavBarTitle .title .nav-brand {
+    gap: 4px !important;
+  }
 }
 
 /* === Large Desktop === */
@@ -374,4 +609,22 @@ html {
 @media print {
   .VPNavBar, .VPSidebar, .VPLocalNav { display: none !important; }
   .vp-doc { max-width: none !important; padding: 0 !important; }
+}
+
+/* === Touch-friendly improvements === */
+@media (hover: none) and (pointer: coarse) {
+  .VPFeature {
+    padding: 24px 20px !important;
+  }
+  .VPButton {
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+  .vp-doc a {
+    padding: 4px 0 !important;
+  }
+  .VPNavBarHamburger {
+    min-width: 48px !important;
+    min-height: 48px !important;
+  }
 }
