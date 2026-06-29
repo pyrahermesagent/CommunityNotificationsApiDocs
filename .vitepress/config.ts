@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import theme from './theme/index.js'
 
 export default defineConfig({
   title: 'CommunityNotificationsAPI',

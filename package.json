@@ -1,6 +1,7 @@
 {
   "name": "CommunityNotificationsApiDocs",
   "version": "1.0.0",
+  "type": "module",
   "description": "Documentation for CommunityNotificationsAPI",
   "scripts": {
     "dev": "vitepress dev .",

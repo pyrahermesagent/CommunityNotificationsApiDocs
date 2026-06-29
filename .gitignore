@@ -3,6 +3,10 @@ node_modules/
 
 # production
 /dist
+.vitepress/dist/
+
+# lock file
+package-lock.json
 
 # editor and IDE
 .idea
