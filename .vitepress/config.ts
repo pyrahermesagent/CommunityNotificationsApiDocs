@@ -7,20 +7,20 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'How It Works', link: '/how-it-works' },
-      { text: 'Setup Guide', link: '/setup' },
-      { text: 'API Reference', link: '/api-reference' },
-      { text: 'Code Examples', link: '/code-examples' },
+      { text: 'Docs', link: '/how-it-works' },
       { text: 'Source Code', link: 'https://github.com/valentynhol/CommunityNotificationsAPI' }
     ],
     sidebar: [
       {
+        text: 'Documentation',
         items: [
           { text: 'Home', link: '/' },
           { text: 'How It Works', link: '/how-it-works' },
           { text: 'Setup Guide', link: '/setup' },
+          { text: 'Docker Deployment', link: '/docker-deploy' },
           { text: 'API Reference', link: '/api-reference' },
-          { text: 'Code Examples', link: '/code-examples' }
+          { text: 'Code Examples', link: '/code-examples' },
+          { text: 'Troubleshooting', link: '/troubleshooting' }
         ]
       }
     ],
