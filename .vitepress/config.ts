@@ -9,6 +9,7 @@ export default defineConfig({
       { text: 'How It Works', link: '/how-it-works' },
       { text: 'Setup Guide', link: '/setup' },
       { text: 'API Reference', link: '/api-reference' },
+      { text: 'Code Examples', link: '/code-examples' },
       { text: 'Source Code', link: 'https://github.com/valentynhol/CommunityNotificationsAPI' }
     ],
     sidebar: [
@@ -17,7 +18,8 @@ export default defineConfig({
           { text: 'Home', link: '/' },
           { text: 'How It Works', link: '/how-it-works' },
           { text: 'Setup Guide', link: '/setup' },
-          { text: 'API Reference', link: '/api-reference' }
+          { text: 'API Reference', link: '/api-reference' },
+          { text: 'Code Examples', link: '/code-examples' }
         ]
       }
     ],
