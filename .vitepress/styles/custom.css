@@ -1,0 +1,377 @@
+/* ============================================
+   CommunityNotificationsAPI — Custom Styles
+   ============================================ */
+
+/* === Brand Colors & Theme Variables === */
+:root {
+  --vp-c-brand: #3b82f6;
+  --vp-c-brand-light: #60a5fa;
+  --vp-c-brand-lighter: #93c5fd;
+  --vp-c-brand-dark: #2563eb;
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #3b82f6 30%, #8b5cf6);
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, rgba(59,130,246,0.15) 50%, rgba(139,92,246,0.15) 50%);
+}
+
+.dark {
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, rgba(59,130,246,0.25) 50%, rgba(139,92,246,0.25) 50%);
+}
+
+/* === Smooth Scrolling === */
+html {
+  scroll-behavior: smooth;
+}
+
+/* === Code Blocks === */
+.vp-doc pre,
+.vp-doc code {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace !important;
+  font-size: 0.85rem !important;
+  letter-spacing: -0.01em;
+}
+
+.vp-doc pre {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+  border: 1px solid rgba(148,163,184,0.2) !important;
+  border-radius: 12px !important;
+  padding: 16px 20px !important;
+  overflow-x: auto !important;
+  margin: 20px 0 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1) !important;
+  font-size: 0.82rem !important;
+  line-height: 1.6 !important;
+  position: relative !important;
+}
+
+.dark .vp-doc pre {
+  background: linear-gradient(135deg, #0f172a 0%, #020617 100%) !important;
+  border: 1px solid rgba(148,163,184,0.3) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.2) !important;
+}
+
+.vp-doc code {
+  background: rgba(59,130,246,0.08) !important;
+  border: 1px solid rgba(59,130,246,0.15) !important;
+  padding: 3px 8px !important;
+  border-radius: 6px !important;
+  color: var(--vp-c-brand) !important;
+  font-weight: 500 !important;
+}
+
+.dark .vp-doc code {
+  background: rgba(59,130,246,0.15) !important;
+  border: 1px solid rgba(59,130,246,0.25) !important;
+}
+
+/* === Navigation Bar === */
+.VPNavBar {
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+  transition: all 0.3s ease !important;
+}
+
+.dark .VPNavBar {
+  background: rgba(15, 23, 42, 0.85) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+}
+
+.VPNavBarTitle {
+  font-weight: 700 !important;
+  font-size: 1.25rem !important;
+}
+
+/* === Feature Cards (Glassmorphism) === */
+.VPFeature {
+  border: 1px solid rgba(0,0,0,0.08) !important;
+  border-radius: 16px !important;
+  padding: 28px 24px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04) !important;
+}
+
+.dark .VPFeature {
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  background: rgba(30, 41, 59, 0.6) !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2) !important;
+}
+
+.VPFeature:hover {
+  transform: translateY(-4px) scale(1.02) !important;
+  box-shadow: 0 20px 40px rgba(59,130,246,0.15) !important;
+  border-color: var(--vp-c-brand-light) !important;
+}
+
+.dark .VPFeature:hover {
+  box-shadow: 0 20px 40px rgba(59,130,246,0.25) !important;
+}
+
+/* === Footer === */
+.VPFooter {
+  border-top: 1px solid rgba(0,0,0,0.08) !important;
+  padding: 32px 24px !important;
+  background: rgba(241,245,249,0.5) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.dark .VPFooter {
+  border-top: 1px solid rgba(255,255,255,0.08) !important;
+  background: rgba(30, 41, 59, 0.5) !important;
+}
+
+/* === Sidebar === */
+.VPSidebar {
+  border-right: 1px solid rgba(0,0,0,0.08) !important;
+  background: rgba(248, 250, 252, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  padding: 24px 0 !important;
+}
+
+.dark .VPSidebar {
+  border-right: 1px solid rgba(255,255,255,0.08) !important;
+  background: rgba(15, 23, 42, 0.95) !important;
+}
+
+.VPSidebarItem.is-active > .item {
+  color: var(--vp-c-brand) !important;
+  font-weight: 600 !important;
+  background: rgba(59,130,246,0.08) !important;
+  border-radius: 8px !important;
+  padding-left: 12px !important;
+  margin-left: -12px !important;
+  border-left: 3px solid var(--vp-c-brand) !important;
+}
+
+.dark .VPSidebarItem.is-active > .item {
+  background: rgba(59,130,246,0.15) !important;
+}
+
+/* === Main Content === */
+.vp-doc {
+  max-width: 75ch !important;
+  margin: 0 auto !important;
+  padding: 32px 32px 64px !important;
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+}
+
+.vp-doc h1 {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 24px !important;
+  background: linear-gradient(135deg, #1e293b 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .vp-doc h1 {
+  background: linear-gradient(135deg, #f1f5f9 0%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.vp-doc h2 {
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  margin: 32px 0 16px !important;
+  padding-bottom: 8px !important;
+  border-bottom: 2px solid rgba(59,130,246,0.2) !important;
+}
+
+.vp-doc h3 {
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  margin: 24px 0 12px !important;
+}
+
+/* === Tables === */
+.vp-doc table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin: 24px 0 !important;
+  font-size: 0.9rem !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+}
+
+.vp-doc th, .vp-doc td {
+  padding: 12px 16px !important;
+  border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+  text-align: left !important;
+}
+
+.dark .vp-doc th, .dark .vp-doc td {
+  border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+.vp-doc th {
+  background: rgba(59,130,246,0.08) !important;
+  font-weight: 600 !important;
+  color: var(--vp-c-brand) !important;
+}
+
+.dark .vp-doc th {
+  background: rgba(59,130,246,0.15) !important;
+}
+
+.vp-doc tr:hover {
+  background: rgba(59,130,246,0.04) !important;
+}
+
+/* === Callouts / Custom Blocks === */
+.vp-doc .custom-block {
+  border: 1px solid rgba(0,0,0,0.1) !important;
+  border-radius: 12px !important;
+  padding: 20px 24px !important;
+  margin: 24px 0 !important;
+  background: rgba(241,245,249,0.5) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.dark .vp-doc .custom-block {
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  background: rgba(30, 41, 59, 0.5) !important;
+}
+
+.vp-doc .custom-block.tip {
+  border-left: 4px solid var(--vp-c-brand) !important;
+  background: rgba(59,130,246,0.05) !important;
+}
+
+.dark .vp-doc .custom-block.tip {
+  background: rgba(59,130,246,0.1) !important;
+}
+
+.vp-doc .custom-block.warning {
+  border-left: 4px solid #f59e0b !important;
+  background: rgba(245,158,11,0.05) !important;
+}
+
+.dark .vp-doc .custom-block.warning {
+  background: rgba(245,158,11,0.1) !important;
+}
+
+.vp-doc .custom-block.danger {
+  border-left: 4px solid #ef4444 !important;
+  background: rgba(239,68,68,0.05) !important;
+}
+
+.dark .vp-doc .custom-block.danger {
+  background: rgba(239,68,68,0.1) !important;
+}
+
+/* === Links === */
+.vp-doc a {
+  color: var(--vp-c-brand) !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid transparent !important;
+  transition: all 0.2s ease !important;
+  font-weight: 500 !important;
+}
+
+.vp-doc a:hover {
+  border-bottom-color: var(--vp-c-brand) !important;
+  text-shadow: 0 0 8px rgba(59,130,246,0.3) !important;
+}
+
+/* === Buttons === */
+.VPButton {
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  padding: 12px 28px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  font-size: 1rem !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+  letter-spacing: 0.02em !important;
+}
+
+.VPButton.brand {
+  background: linear-gradient(135deg, var(--vp-c-brand) 0%, var(--vp-c-brand-light) 100%) !important;
+  border: none !important;
+  color: white !important;
+}
+
+.VPButton.brand:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(59,130,246,0.4) !important;
+}
+
+.VPButton.alt {
+  border: 2px solid var(--vp-c-brand) !important;
+  color: var(--vp-c-brand) !important;
+  background: transparent !important;
+}
+
+.VPButton.alt:hover {
+  background: var(--vp-c-brand) !important;
+  color: white !important;
+  transform: translateY(-2px) !important;
+}
+
+/* === Hero Section === */
+.VPHero {
+  padding: 80px 0 60px !important;
+}
+
+.VPHero .heading {
+  font-size: 3.5rem !important;
+  font-weight: 900 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.03em !important;
+  margin-bottom: 20px !important;
+}
+
+.VPHero .tagline {
+  font-size: 1.25rem !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  max-width: 600px !important;
+}
+
+/* === Tablet === */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .VPFeature .grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .VPHero .heading { font-size: 3rem !important; }
+  .vp-doc { padding: 24px 24px 48px !important; }
+}
+
+/* === Mobile === */
+@media (max-width: 768px) {
+  .VPNavBar { padding: 8px 16px !important; }
+  .VPHero { padding: 40px 0 30px !important; }
+  .VPHero .heading { font-size: 2.5rem !important; }
+  .VPHero .tagline { font-size: 1.1rem !important; }
+  .VPFeature { padding: 20px 16px !important; }
+  .VPFeature .grid { grid-template-columns: 1fr !important; }
+  .vp-doc { padding: 20px 16px 40px !important; font-size: 15px !important; }
+  .vp-doc h1 { font-size: 2rem !important; }
+  .vp-doc h2 { font-size: 1.5rem !important; }
+  .vp-doc h3 { font-size: 1.25rem !important; }
+  pre { font-size: 0.75rem !important; padding: 12px 16px !important; }
+  .VPButton { padding: 10px 20px !important; font-size: 0.9rem !important; }
+  .VPFeature .box { padding: 16px !important; }
+  .VPFeature .title { font-size: 1.1rem !important; }
+  .VPFeature .details { font-size: 0.9rem !important; }
+}
+
+/* === Large Desktop === */
+@media (min-width: 1280px) {
+  .VPHero .heading { font-size: 4rem !important; }
+  .vp-doc { max-width: 80ch !important; }
+}
+
+/* === Print === */
+@media print {
+  .VPNavBar, .VPSidebar, .VPLocalNav { display: none !important; }
+  .vp-doc { max-width: none !important; padding: 0 !important; }
+}

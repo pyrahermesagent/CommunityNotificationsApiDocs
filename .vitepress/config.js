@@ -1,9 +1,22 @@
-import { defineConfig } from 'vitepress'
-import theme from './theme/index.js'
+const fs = require('fs')
+const path = require('path')
 
-export default defineConfig({
+const cssPath = path.join(__dirname, 'styles', 'custom.css')
+const customCSS = fs.readFileSync(cssPath, 'utf8')
+
+module.exports = {
+  base: '/CommunityNotificationsApiDocs/',
   title: 'CommunityNotificationsAPI',
   description: 'Notifications REST API Template — Documentation',
+  vite: {
+    css: {
+      preprocessorOptions: {
+        css: {
+          additionalData: customCSS
+        }
+      }
+    }
+  },
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
@@ -32,4 +45,4 @@ export default defineConfig({
       copyright: 'Copyright © 2025-present PlutoFramework'
     }
   }
-})
+}

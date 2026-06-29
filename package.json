@@ -1,11 +1,10 @@
 {
   "name": "CommunityNotificationsApiDocs",
   "version": "1.0.0",
-  "type": "module",
   "description": "Documentation for CommunityNotificationsAPI",
   "scripts": {
     "dev": "vitepress dev .",
-    "build": "vitepress build .",
+    "build": "vitepress build . && node postbuild.js",
     "preview": "vitepress preview ."
   },
   "devDependencies": {
