@@ -161,6 +161,9 @@ html {
   background: rgba(255, 255, 255, 0.7) !important;
   backdrop-filter: blur(10px) !important;
   box-shadow: 0 1px 3px rgba(0,0,0,0.04) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 180px !important;
 }
 
 .dark .VPFeature {
@@ -178,6 +181,41 @@ html {
 
 .dark .VPFeature:hover {
   box-shadow: 0 20px 40px rgba(59,130,246,0.25) !important;
+}
+
+/* Feature card icon */
+.VPFeature .icon {
+  font-size: 2rem !important;
+  line-height: 1 !important;
+  margin-bottom: 12px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 48px !important;
+  height: 48px !important;
+  background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(139,92,246,0.1)) !important;
+  border-radius: 12px !important;
+}
+
+/* Feature card content alignment */
+.VPFeature .box {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+  height: 100% !important;
+}
+
+.VPFeature .title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 8px !important;
+}
+
+.VPFeature .details {
+  font-size: 0.95rem !important;
+  line-height: 1.5 !important;
+  color: var(--vp-c-text-2) !important;
+  flex: 1 !important;
 }
 
 /* === Footer === */
@@ -395,14 +433,62 @@ html {
 /* === Hero Section === */
 .VPHero {
   padding: 80px 0 60px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.VPHero .container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 32px !important;
+  max-width: 1200px !important;
+  width: 100% !important;
+}
+
+.VPHero .main {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  flex: 1 !important;
 }
 
 .VPHero .heading {
   font-size: 3.5rem !important;
   font-weight: 900 !important;
-  line-height: 1.1 !important;
+  line-height: 1.15 !important;
   letter-spacing: -0.03em !important;
   margin-bottom: 20px !important;
+  word-break: break-all !important;
+  overflow-wrap: break-word !important;
+  hyphens: auto !important;
+  -webkit-hyphens: auto !important;
+}
+
+/* Fix for CommunityNotificationsAPI title - add space for better wrapping */
+.VPHero .heading .name {
+  word-break: normal !important;
+  display: inline-block !important;
+  white-space: pre !important;
+}
+
+.VPHero .text {
+  display: block !important;
+  font-size: 1.5rem !important;
+  font-weight: 300 !important;
+  color: var(--vp-c-text-2) !important;
+  margin-bottom: 8px !important;
+}
+
+.VPHero .tagline {
+  font-size: 1.25rem !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  max-width: 600px !important;
+  margin-bottom: 32px !important;
 }
 
 .VPHero .tagline {

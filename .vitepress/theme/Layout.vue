@@ -10,7 +10,6 @@ const { site } = useData()
     <template #nav-bar-title-after>
       <div class="nav-brand">
         <img
-          v-if="site.title"
           src="/plutolabs-logo-lines.svg"
           alt="PlutoFramework"
           class="nav-logo"
