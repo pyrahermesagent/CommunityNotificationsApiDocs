@@ -1,0 +1,32 @@
+import { defineConfig } from 'vitepress'
+
+export default defineConfig({
+  title: 'CommunityNotificationsAPI',
+  description: 'Notifications REST API Template — Documentation',
+  themeConfig: {
+    nav: [
+      { text: 'Home', link: '/' },
+      { text: 'How It Works', link: '/how-it-works' },
+      { text: 'Setup Guide', link: '/setup' },
+      { text: 'API Reference', link: '/api-reference' },
+      { text: 'Source Code', link: 'https://github.com/valentynhol/CommunityNotificationsAPI' }
+    ],
+    sidebar: [
+      {
+        items: [
+          { text: 'Home', link: '/' },
+          { text: 'How It Works', link: '/how-it-works' },
+          { text: 'Setup Guide', link: '/setup' },
+          { text: 'API Reference', link: '/api-reference' }
+        ]
+      }
+    ],
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/valentynhol/CommunityNotificationsAPI' }
+    ],
+    footer: {
+      message: 'Released under MIT License.',
+      copyright: 'Copyright © 2025-present PlutoFramework'
+    }
+  }
+})
