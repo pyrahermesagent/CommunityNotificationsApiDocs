@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+
+# production
+/dist
+
+# editor and IDE
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# env files
+.env
+.env.*
+
+# logs
+*.log
