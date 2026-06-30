@@ -246,17 +246,17 @@ html {
 
 /* === Footer === */
 .VPFooter {
-  border-top: 1px solid rgba(0,0,0,0.08) !important;
-  padding: 32px 24px !important;
-  background: rgba(241,245,249,0.5) !important;
-  backdrop-filter: blur(10px) !important;
+  border-top: 1px solid rgba(0,0,0,0.06) !important;
+  padding: 20px 24px !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
 }
 
 .dark .VPFooter {
-  border-top: 1px solid rgba(255,255,255,0.08) !important;
-  background: rgba(30, 41, 59, 0.5) !important;
+  border-top: 1px solid rgba(255,255,255,0.06) !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
 }
-
 /* === Sidebar === */
 .VPSidebar {
   border-right: 1px solid rgba(0,0,0,0.08) !important;
@@ -444,9 +444,12 @@ html {
   transform: translateY(-2px) !important;
 }
 
-/* === FIX 1: Hero section — title wrapping, image position, spacing === */
+/* === FIX 1: Hero section — tight, professional spacing === */
 .VPHero {
-  padding: 60px 0 24px !important;
+  padding: 56px 0 28px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
 }
 
 .VPHero .container {
@@ -454,6 +457,7 @@ html {
   flex-direction: column !important;
   align-items: center !important;
   text-align: center !important;
+  width: 100% !important;
 }
 
 .VPHero .main {
@@ -462,21 +466,20 @@ html {
   align-items: center !important;
   text-align: center !important;
   width: 100% !important;
-  max-width: 800px !important;
+  max-width: 680px !important;
 }
 
-/* Fix title wrapping with proper font size and line-height */
+/* Fix title wrapping — keep on one line when possible */
 .VPHero .heading {
   font-size: 2.5rem !important;
   font-weight: 900 !important;
   line-height: 1.15 !important;
-  letter-spacing: -0.02em !important;
+  letter-spacing: -0.03em !important;
   margin-bottom: 10px !important;
   width: 100% !important;
   max-width: 100% !important;
 }
 
-/* Better word break for the compound name — force it onto one line if possible */
 .VPHero .heading .name {
   display: inline !important;
   width: auto !important;
@@ -489,56 +492,30 @@ html {
   white-space: normal !important;
 }
 
+/* Hide the awkward "Documentation" subtitle — it's redundant */
 .VPHero .heading .text {
-  display: block !important;
-  font-size: 1.25rem !important;
-  font-weight: 400 !important;
-  color: var(--vp-c-text-2) !important;
-  margin-top: 4px !important;
-  margin-bottom: 8px !important;
+  display: none !important;
 }
 
+/* Make tagline (description) more prominent */
 .VPHero .tagline {
   font-size: 1.125rem !important;
   font-weight: 400 !important;
   line-height: 1.6 !important;
-  max-width: 580px !important;
+  max-width: 560px !important;
   margin: 0 auto 20px !important;
   color: var(--vp-c-text-2) !important;
 }
 
-/* Hero image: subtle background, not dominating */
+/* Remove the background image/hero image completely */
 .VPHero .image {
-  margin-top: 16px !important;
-  order: 2 !important;
-  width: 100% !important;
-  display: flex !important;
-  justify-content: center !important;
-  padding: 0 16px !important;
+  display: none !important;
 }
 
-.VPHero .image .image-src {
-  max-width: 120px !important;
-  width: 100% !important;
-  height: auto !important;
-  object-fit: contain !important;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.08)) !important;
-  transition: transform 0.3s ease !important;
-  opacity: 0.9 !important;
-}
-
-.dark .VPHero .image .image-src {
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2)) brightness(1.1) !important;
-}
-
-.VPHero .image .image-src:hover {
-  transform: scale(1.05) !important;
-}
-
-/* Actions: side by side with proper spacing */
+/* Actions: proper spacing */
 .VPHero .actions {
   display: flex !important;
-  gap: 12px !important;
+  gap: 14px !important;
   justify-content: center !important;
   flex-wrap: wrap !important;
   margin-bottom: 0 !important;
@@ -548,14 +525,39 @@ html {
   flex: 0 0 auto !important;
 }
 
-/* === FIX 2: Page layout — remove footer whitespace === */
+/* === FIX 2: Page layout — eliminate footer whitespace === */
 .VPHome {
   margin-bottom: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.VPHome .content-container {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 0 auto !important;
 }
 
 .VPHome .vp-doc.container {
-  padding-bottom: 24px !important;
+  padding-bottom: 16px !important;
   margin: 0 auto !important;
+}
+
+/* Tighten feature section spacing */
+.VPHomeFeatures {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.VPHomeFeatures .container {
+  padding-top: 0 !important;
+  padding-bottom: 8px !important;
+}
+
+/* Tighten footer spacing */
+.VPFooter {
+  margin-top: 0 !important;
+  padding: 20px 24px !important;
 }
 
 /* === FIX 3: Tablet === */
