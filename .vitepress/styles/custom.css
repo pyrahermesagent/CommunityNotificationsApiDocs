@@ -88,18 +88,9 @@ body {
   margin-bottom: 0 !important;
 }
 
-/* === Hero Section === */
+/* Hero section — tighter spacing */
 .VPHero {
-  padding: 56px 0 28px !important;
-}
-
-.VPHero .container {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  text-align: center !important;
-  width: 100% !important;
-  max-width: 720px !important;
+  padding: 40px 0 20px !important;
 }
 
 .VPHero .main {
@@ -109,6 +100,7 @@ body {
   text-align: center !important;
   width: 100% !important;
   max-width: 680px !important;
+  gap: 16px !important;
 }
 
 /* Hero title — force proper sizing on the actual name span */
@@ -149,8 +141,20 @@ body {
   font-weight: 400 !important;
   line-height: 1.65 !important;
   max-width: 560px !important;
-  margin: 0 auto 20px !important;
+  margin: 0 auto 16px !important;
   color: var(--vp-c-text-2) !important;
+}
+
+/* Feature section - tighter spacing */
+.VPHomeFeatures {
+  margin-top: 8px !important;
+  padding-top: 12px !important;
+  padding-bottom: 0 !important;
+}
+
+.VPHomeFeatures .container {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 /* Hide hero image */
@@ -164,7 +168,7 @@ body {
   gap: 16px !important;
   justify-content: center !important;
   flex-wrap: wrap !important;
-  margin-bottom: 20px !important;
+  margin-bottom: 24px !important;
 }
 
 .VPHero .action {
@@ -295,7 +299,7 @@ body {
   color: var(--vp-c-brand-light) !important;
 }
 
-/* === Page Headers === */
+/* === Page headers === */
 .vp-doc h1 {
   font-size: 2.125rem !important;
   font-weight: 800 !important;
@@ -307,7 +311,7 @@ body {
 .vp-doc h2 {
   font-size: 1.5rem !important;
   font-weight: 700 !important;
-  margin: 36px 0 14px !important;
+  margin: 32px 0 12px !important;
   padding-bottom: 8px !important;
   border-bottom: 2px solid rgba(59,130,246,0.12) !important;
   letter-spacing: -0.015em !important;
@@ -317,18 +321,18 @@ body {
 .vp-doc h3 {
   font-size: 1.2rem !important;
   font-weight: 600 !important;
-  margin: 24px 0 10px !important;
+  margin: 20px 0 8px !important;
   letter-spacing: -0.01em !important;
   line-height: 1.35 !important;
   padding-left: 8px !important;
   border-left: 3px solid var(--vp-c-brand-light) !important;
 }
 
-/* === Paragraphs & Text === */
+/* === Paragraphs & Text — improved line height and spacing === */
 .vp-doc p {
   color: var(--vp-c-text-2) !important;
-  line-height: 1.75 !important;
-  margin-bottom: 14px !important;
+  line-height: 1.8 !important;
+  margin-bottom: 16px !important;
   font-weight: 400 !important;
 }
 
@@ -371,7 +375,7 @@ body {
   color: var(--vp-c-brand-light) !important;
 }
 
-/* === Code Blocks — improved contrast, less shadow === */
+/* === Code Blocks — improved contrast, less shadow, larger font === */
 .vp-doc pre,
 .vp-doc pre[class*="language-"] {
   background: #1e293b !important;
@@ -379,7 +383,7 @@ body {
   border-radius: 10px !important;
   padding: 16px 20px !important;
   margin: 18px 0 !important;
-  font-size: 0.85rem !important;
+  font-size: 0.9rem !important;
   line-height: 1.65 !important;
   overflow-x: auto !important;
   box-shadow: 0 1px 4px rgba(0,0,0,0.08) !important;
@@ -644,9 +648,14 @@ html .shiki span[style*="--shiki-dark:#ffffff"] {
   text-align: left !important;
   border-bottom: 2px solid rgba(59,130,246,0.12) !important;
   color: var(--vp-c-text-1) !important;
-  min-width: 60px !important;
-  font-size: 0.75rem !important;
+  min-width: 80px !important;
+  font-size: 0.8rem !important;
   white-space: nowrap !important;
+  overflow: visible !important;
+}
+
+.vp-doc table th, .vp-doc table td {
+  overflow: visible !important;
 }
 
 @media (max-width: 640px) {
@@ -667,6 +676,7 @@ html .shiki span[style*="--shiki-dark:#ffffff"] {
   color: var(--vp-c-text-2) !important;
   vertical-align: middle !important;
   white-space: nowrap !important;
+  overflow: visible !important;
 }
 
 .dark .vp-doc table td {
@@ -702,7 +712,7 @@ html .shiki span[style*="--shiki-dark:#ffffff"] {
   color: rgba(59,130,246,0.6) !important;
 }
 
-/* === Callouts / Alerts === */
+/* === Callouts / Alerts — improved contrast === */
 .vp-doc .custom-block {
   border-radius: 10px !important;
   padding: 14px 18px !important;
@@ -712,18 +722,28 @@ html .shiki span[style*="--shiki-dark:#ffffff"] {
 }
 
 .vp-doc .custom-block.tip {
-  border-color: rgba(16, 185, 129, 0.25) !important;
-  background: rgba(16, 185, 129, 0.05) !important;
+  border-color: rgba(16, 185, 129, 0.35) !important;
+  background: rgba(16, 185, 129, 0.08) !important;
+  border-left: 4px solid rgba(16, 185, 129, 0.5) !important;
 }
 
 .vp-doc .custom-block.warning {
-  border-color: rgba(245, 158, 11, 0.25) !important;
-  background: rgba(245, 158, 11, 0.05) !important;
+  border-color: rgba(245, 158, 11, 0.35) !important;
+  background: rgba(245, 158, 11, 0.08) !important;
+  border-left: 4px solid rgba(245, 158, 11, 0.5) !important;
 }
 
 .vp-doc .custom-block.note {
-  border-color: rgba(59,130,246, 0.2) !important;
-  background: rgba(59,130,246, 0.04) !important;
+  border-color: rgba(59,130,246, 0.3) !important;
+  background: rgba(59,130,246, 0.06) !important;
+  border-left: 4px solid rgba(59,130,246, 0.4) !important;
+}
+
+/* Callout titles */
+.vp-doc .custom-block-title {
+  font-weight: 600 !important;
+  color: var(--vp-c-text-1) !important;
+  margin-bottom: 4px !important;
 }
 
 /* === Sidebar === */
@@ -829,13 +849,13 @@ body .Layout:has(.VPHome) {
 
 /* === Home page feature section === */
 .VPHomeFeatures {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
+  margin-top: 8px !important;
+  padding-top: 8px !important;
   padding-bottom: 0 !important;
 }
 
 .VPHomeFeatures .container {
-  padding-top: 6px !important;
+  padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
 
