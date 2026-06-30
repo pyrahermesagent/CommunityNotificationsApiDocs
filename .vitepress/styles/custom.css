@@ -147,8 +147,24 @@ body {
 
 /* Hide redundant "Documentation" subtitle */
 .VPHero .heading .text {
-  display: none !important;
-}
+    display: none !important;
+  }
+
+  /* Feature cards — improve grid alignment */
+  .VPHomeFeatures .container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+  }
+
+  .VPFeature {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .VPFeature .icon {
+    margin-bottom: 12px !important;
+  }
 
 /* Description tagline */
 .VPHero .tagline {
@@ -908,23 +924,30 @@ html .shiki span[style*="--shiki-dark:#ffffff"] {
 
 /* === Footer === */
 .VPFooter {
-  border-top: 1px solid rgba(0,0,0,0.05) !important;
+  border-top: 1px solid rgba(0,0,0,0.08) !important;
   padding: 14px 24px !important;
   background: transparent !important;
 }
-
 .dark .VPFooter {
-  border-top: 1px solid rgba(255,255,255,0.05) !important;
+  border-top: 1px solid rgba(255,255,255,0.06) !important;
   background: transparent !important;
 }
-
 .VPFooter .divider {
   display: none !important;
 }
-
 .VPFooter a {
   color: var(--vp-c-brand) !important;
   font-weight: 500 !important;
+}
+/* Improve footer text contrast */
+.VPFooter .message,
+.VPFooter .copyright {
+  color: #4a5568 !important;
+  font-weight: 500 !important;
+}
+.dark .VPFooter .message,
+.dark .VPFooter .copyright {
+  color: #a0aec0 !important;
 }
 
 /* === Reduce home page footer gap === */
