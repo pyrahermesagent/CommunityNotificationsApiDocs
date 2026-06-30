@@ -644,9 +644,18 @@ html .shiki span[style*="--shiki-dark:#ffffff"] {
   text-align: left !important;
   border-bottom: 2px solid rgba(59,130,246,0.12) !important;
   color: var(--vp-c-text-1) !important;
-  white-space: nowrap !important;
-  min-width: 70px !important;
+  min-width: 60px !important;
   font-size: 0.75rem !important;
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+}
+
+@media (max-width: 640px) {
+  .vp-doc table th {
+    white-space: normal !important;
+    font-size: 0.7rem !important;
+    padding: 6px 8px !important;
+  }
 }
 
 .dark .vp-doc table th {
@@ -1016,6 +1025,15 @@ html .shiki span[style*="--shiki-dark:#ffffff"] {
   line-height: 1.5 !important;
   overflow-wrap: break-word !important;
   word-break: break-word !important;
+}
+
+/* VitePress applies overflow: hidden + text-overflow: ellipsis + white-space: nowrap
+   directly to .outline-link class, overriding our .VPToc a rules. Fix: */
+.outline-link {
+  white-space: normal !important;
+  text-overflow: clip !important;
+  overflow: visible !important;
+  max-width: none !important;
 }
 
 .VPToc a:hover {
