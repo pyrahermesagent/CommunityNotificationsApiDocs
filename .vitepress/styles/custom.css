@@ -628,11 +628,9 @@ html .shiki span[style*="--shiki-dark:#ffffff"] {
 .vp-doc table {
   width: 100% !important;
   border-collapse: separate !important;
-  overflow: hidden !important;
   margin: 18px 0 !important;
   font-size: 0.875rem !important;
   box-shadow: 0 1px 3px rgba(0,0,0,0.04) !important;
-  display: block !important;
   overflow-x: auto !important;
   -webkit-overflow-scrolling: touch !important;
 }
@@ -644,30 +642,13 @@ html .shiki span[style*="--shiki-dark:#ffffff"] {
 .vp-doc table th {
   background: rgba(59,130,246,0.06) !important;
   font-weight: 600 !important;
-  padding: 8px 10px !important;
+  padding: 8px 12px !important;
   text-align: left !important;
   border-bottom: 2px solid rgba(59,130,246,0.12) !important;
   color: var(--vp-c-text-1) !important;
-  min-width: 80px !important;
   font-size: 0.8rem !important;
   white-space: nowrap !important;
-  overflow: visible !important;
-}
-
-.vp-doc table th, .vp-doc table td {
-  overflow: visible !important;
-}
-
-@media (max-width: 640px) {
-  .vp-doc table th {
-    font-size: 0.7rem !important;
-    padding: 6px 8px !important;
-  }
-}
-
-.dark .vp-doc table th {
-  background: rgba(59,130,246,0.1) !important;
-  border-bottom-color: rgba(59,130,246,0.2) !important;
+  min-width: 100px !important;
 }
 
 .vp-doc table td {
