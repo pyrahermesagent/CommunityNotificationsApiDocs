@@ -12,7 +12,7 @@ module.exports = {
   },
   reporter: [
     ['list'],
-    ['html', { outputFolder: 'test-results/html-report' }]
+    ['html', { outputFolder: '../playwright-report/html' }]
   ],
   projects: [
     {
