@@ -82,6 +82,11 @@ body {
   flex-direction: column;
 }
 
+/* Remove VPHome bottom margin (128px VitePress default) */
+.VPHome {
+  margin-bottom: 0 !important;
+}
+
 /* === Hero Section === */
 .VPHero {
   padding: 56px 0 28px !important;
@@ -165,29 +170,33 @@ body {
   flex: 0 0 auto !important;
 }
 
-/* Secondary button contrast */
-.VPHero .action .VPButton.secondary {
-  background: rgba(249, 250, 251, 1) !important;
-  border: 1px solid rgba(0,0,0,0.12) !important;
-  color: var(--vp-c-text-2) !important;
+/* Secondary button — ghost style with border */
+.VPHero .action .VPButton.alt,
+.VPHero .action .VPButton.medium.alt {
+  background: transparent !important;
+  border: 1px solid rgba(0,0,0,0.15) !important;
+  color: var(--vp-c-text-1) !important;
   transition: all 0.2s ease !important;
 }
 
-.VPHero .action .VPButton.secondary:hover {
-  background: rgba(243, 244, 246, 1) !important;
-  border-color: var(--vp-c-brand-light) !important;
+.VPHero .action .VPButton.alt:hover,
+.VPHero .action .VPButton.medium.alt:hover {
+  background: rgba(249, 250, 251, 1) !important;
+  border-color: var(--vp-c-brand) !important;
   color: var(--vp-c-brand) !important;
 }
 
-.dark .VPHero .action .VPButton.secondary {
-  background: rgba(30, 41, 59, 1) !important;
-  border-color: rgba(255,255,255,0.15) !important;
-  color: var(--vp-c-text-2) !important;
+.dark .VPHero .action .VPButton.alt,
+.dark .VPHero .action .VPButton.medium.alt {
+  background: transparent !important;
+  border-color: rgba(255,255,255,0.2) !important;
+  color: var(--vp-c-text-1) !important;
 }
 
-.dark .VPHero .action .VPButton.secondary:hover {
-  background: rgba(51, 65, 85, 1) !important;
-  border-color: var(--vp-c-brand-light) !important;
+.dark .VPHero .action .VPButton.alt:hover,
+.dark .VPHero .action .VPButton.medium.alt:hover {
+  background: rgba(30, 41, 59, 1) !important;
+  border-color: var(--vp-c-brand) !important;
   color: var(--vp-c-brand-light) !important;
 }
 
@@ -664,11 +673,27 @@ body {
 /* === Home page feature section === */
 .VPHomeFeatures {
   margin-top: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .VPHomeFeatures .container {
   padding-top: 6px !important;
   padding-bottom: 0 !important;
+}
+
+/* Feature card horizontal spacing (not grid gap — cards are standalone) */
+.VPFeature {
+  margin-bottom: 16px !important;
+}
+
+.VPFeature:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Grid gap */
+.VPFeature .grid {
+  gap: 16px !important;
 }
 
 /* === Tablet === */
@@ -714,11 +739,16 @@ body {
   
   .VPHero .actions {
     flex-direction: column !important;
-    gap: 10px !important;
+    gap: 12px !important;
+    width: 100% !important;
   }
   
   .VPHero .action {
+    flex: 1 1 0% !important;
     width: 100% !important;
+    max-width: none !important;
+    display: flex !important;
+    align-items: stretch !important;
   }
   
   .VPHero .actions .VPButton {
@@ -726,6 +756,10 @@ body {
     text-align: center !important;
     min-height: 46px !important;
     touch-action: manipulation !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 1 1 0% !important;
   }
   
   .VPFeature {

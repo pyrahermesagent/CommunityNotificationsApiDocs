@@ -5,7 +5,7 @@ const cssPath = path.join(__dirname, 'styles', 'custom.css')
 const customCSS = fs.readFileSync(cssPath, 'utf8')
 
 module.exports = {
-  base: '/CommunityNotificationsApiDocs/',
+  base: '/',
   title: 'CommunityNotificationsAPI',
   description: 'Notifications REST API Template — Documentation',
   logo: '/plutolabs-logo-lines.svg',
