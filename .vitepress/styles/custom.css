@@ -156,48 +156,55 @@ html {
   background: var(--vp-c-brand) !important;
 }
 
-/* === Feature Cards === */
+/* === Feature Cards (Glassmorphism) === */
 .VPFeature {
-  border: 1px solid rgba(0,0,0,0.08) !important;
+  border: 1px solid rgba(0,0,0,0.1) !important;
   border-radius: 16px !important;
   padding: 28px 24px !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  background: rgba(255, 255, 255, 0.7) !important;
+  background: rgba(255, 255, 255, 0.8) !important;
   backdrop-filter: blur(10px) !important;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04) !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04) !important;
   display: flex !important;
   flex-direction: column !important;
-  min-height: 180px !important;
+  height: 100% !important;
 }
 
 .dark .VPFeature {
-  border: 1px solid rgba(255,255,255,0.08) !important;
-  background: rgba(30, 41, 59, 0.6) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  background: rgba(30, 41, 59, 0.7) !important;
   backdrop-filter: blur(10px) !important;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2) !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2) !important;
 }
 
 .VPFeature:hover {
-  transform: translateY(-4px) scale(1.02) !important;
-  box-shadow: 0 20px 40px rgba(59,130,246,0.15) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 24px rgba(59,130,246,0.12) !important;
   border-color: var(--vp-c-brand-light) !important;
 }
 
 .dark .VPFeature:hover {
-  box-shadow: 0 20px 40px rgba(59,130,246,0.25) !important;
+  box-shadow: 0 12px 24px rgba(59,130,246,0.2) !important;
 }
 
 .VPFeature .icon {
   font-size: 2rem !important;
   line-height: 1 !important;
-  margin-bottom: 12px !important;
+  margin-bottom: 16px !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 48px !important;
-  height: 48px !important;
-  background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(139,92,246,0.1)) !important;
+  width: 52px !important;
+  height: 52px !important;
+  background: linear-gradient(135deg, var(--vp-c-brand-lighter) 0%, rgba(139,92,246,0.2) 100%) !important;
   border-radius: 12px !important;
+  flex-shrink: 0 !important;
+  box-shadow: 0 2px 8px rgba(59,130,246,0.15) !important;
+}
+
+.dark .VPFeature .icon {
+  background: linear-gradient(135deg, rgba(96,165,250,0.3) 0%, rgba(139,92,246,0.2) 100%) !important;
+  box-shadow: 0 2px 8px rgba(96,165,250,0.2) !important;
 }
 
 .VPFeature .box {
@@ -208,16 +215,33 @@ html {
 }
 
 .VPFeature .title {
-  font-size: 1.25rem !important;
+  font-size: 1.15rem !important;
   font-weight: 700 !important;
-  margin-bottom: 8px !important;
+  margin-bottom: 10px !important;
+  color: var(--vp-c-text-1) !important;
+  letter-spacing: -0.01em !important;
 }
 
 .VPFeature .details {
-  font-size: 0.95rem !important;
-  line-height: 1.5 !important;
+  font-size: 0.92rem !important;
+  line-height: 1.6 !important;
   color: var(--vp-c-text-2) !important;
   flex: 1 !important;
+  font-weight: 400 !important;
+}
+
+/* Make code terms in cards look like code */
+.VPFeature .details code,
+.VPFeature .details :not(pre) > code {
+  background: rgba(59,130,246,0.1) !important;
+  border: 1px solid rgba(59,130,246,0.2) !important;
+  border-radius: 4px !important;
+  padding: 1px 5px !important;
+  font-size: 0.85em !important;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace !important;
+  color: var(--vp-c-brand) !important;
+  font-weight: 500 !important;
+  white-space: nowrap !important;
 }
 
 /* === Footer === */
@@ -420,34 +444,9 @@ html {
   transform: translateY(-2px) !important;
 }
 
-/* === FIX 1: Page layout — eliminate footer whitespace === */
-/* Remove the 128px bottom margin that's causing the footer gap */
-.VPHome {
-  margin-bottom: 0 !important;
-}
-
-/* The actual content structure */
-.VPContent.is-home .VPHome {
-  margin-bottom: 0 !important;
-}
-
-/* Content body must allow proper flow */
-.VPHome .content-body {
-  flex-direction: column !important;
-  flex-grow: 1 !important;
-  min-height: 0 !important;
-}
-
-/* === FIX 1: Remove padding from .vp-doc.container on home page === */
-/* This was causing 80px bottom padding between features and footer */
-.VPHome .vp-doc.container {
-  padding-bottom: 24px !important;
-  margin: 0 auto !important;
-}
-
-/* === FIX 2: Hero section — title wrapping, image position === */
+/* === FIX 1: Hero section — title wrapping, image position, spacing === */
 .VPHero {
-  padding: 60px 0 32px !important;
+  padding: 60px 0 24px !important;
 }
 
 .VPHero .container {
@@ -463,59 +462,54 @@ html {
   align-items: center !important;
   text-align: center !important;
   width: 100% !important;
-  max-width: 900px !important;
+  max-width: 800px !important;
 }
 
-/* Fix title wrapping — force it to break at logical points */
+/* Fix title wrapping with proper font size and line-height */
 .VPHero .heading {
-  font-size: 3.5rem !important;
+  font-size: 2.5rem !important;
   font-weight: 900 !important;
-  line-height: 1.2 !important;
-  letter-spacing: -0.03em !important;
-  margin-bottom: 16px !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 10px !important;
   width: 100% !important;
   max-width: 100% !important;
 }
 
-/* Better word break for the compound name */
+/* Better word break for the compound name — force it onto one line if possible */
 .VPHero .heading .name {
   display: inline !important;
   width: auto !important;
   min-width: 0 !important;
-  overflow-wrap: break-word !important;
-  word-break: break-all !important;
-  hyphens: auto !important;
-  -webkit-hyphens: auto !important;
+  overflow-wrap: normal !important;
+  word-break: keep-all !important;
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
   font-size: inherit !important;
   white-space: normal !important;
 }
 
-/* Break after each uppercase letter for compound words */
-@supports (hyphens: manual) {
-  .VPHero .heading .name {
-    hyphens: none !important;
-  }
-}
-
 .VPHero .heading .text {
   display: block !important;
-  font-size: 1.5rem !important;
-  font-weight: 300 !important;
+  font-size: 1.25rem !important;
+  font-weight: 400 !important;
   color: var(--vp-c-text-2) !important;
   margin-top: 4px !important;
+  margin-bottom: 8px !important;
 }
 
 .VPHero .tagline {
-  font-size: 1.25rem !important;
+  font-size: 1.125rem !important;
   font-weight: 400 !important;
   line-height: 1.6 !important;
-  max-width: 600px !important;
-  margin-bottom: 24px !important;
+  max-width: 580px !important;
+  margin: 0 auto 20px !important;
+  color: var(--vp-c-text-2) !important;
 }
 
-/* Hero image: positioned AFTER all text/buttons */
+/* Hero image: subtle background, not dominating */
 .VPHero .image {
-  margin-top: 24px !important;
+  margin-top: 16px !important;
   order: 2 !important;
   width: 100% !important;
   display: flex !important;
@@ -524,38 +518,44 @@ html {
 }
 
 .VPHero .image .image-src {
-  max-width: 180px !important;
+  max-width: 120px !important;
   width: 100% !important;
   height: auto !important;
   object-fit: contain !important;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1)) !important;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.08)) !important;
   transition: transform 0.3s ease !important;
+  opacity: 0.9 !important;
 }
 
 .dark .VPHero .image .image-src {
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3)) brightness(1.1) !important;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2)) brightness(1.1) !important;
 }
 
 .VPHero .image .image-src:hover {
   transform: scale(1.05) !important;
 }
 
-/* Actions: side by side */
+/* Actions: side by side with proper spacing */
 .VPHero .actions {
   display: flex !important;
-  gap: 16px !important;
+  gap: 12px !important;
   justify-content: center !important;
   flex-wrap: wrap !important;
+  margin-bottom: 0 !important;
 }
 
 .VPHero .action {
   flex: 0 0 auto !important;
 }
-.VPHero .actions {
-  display: flex !important;
-  gap: 16px !important;
-  justify-content: center !important;
-  flex-wrap: wrap !important;
+
+/* === FIX 2: Page layout — remove footer whitespace === */
+.VPHome {
+  margin-bottom: 0 !important;
+}
+
+.VPHome .vp-doc.container {
+  padding-bottom: 24px !important;
+  margin: 0 auto !important;
 }
 
 /* === FIX 3: Tablet === */
@@ -563,7 +563,7 @@ html {
   .VPFeature .grid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
-  .VPHero .heading { font-size: 2.75rem !important; }
+  .VPHero .heading { font-size: 2.25rem !important; }
   .vp-doc { padding: 24px 24px 48px !important; }
 }
 
@@ -577,7 +577,7 @@ html {
   }
   
   .VPNavBarTitle .title {
-    font-size: 0.9rem !important;
+    font-size: 0.85rem !important;
   }
   
   .VPNavBarTitle .title .nav-brand {
@@ -589,34 +589,31 @@ html {
   }
   
   .VPHero {
-    padding: 32px 16px 24px !important;
+    padding: 24px 16px 20px !important;
   }
   
   .VPHero .heading {
-    font-size: 1.75rem !important;
-    line-height: 1.25 !important;
-    margin-bottom: 12px !important;
-  }
-  
-  .VPHero .heading .name {
-    font-size: inherit !important;
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 8px !important;
   }
   
   .VPHero .heading .text {
-    font-size: 1.25rem !important;
+    font-size: 1.1rem !important;
   }
   
   .VPHero .tagline {
-    font-size: 0.95rem !important;
-    padding: 0 8px !important;
+    font-size: 0.9rem !important;
+    padding: 0 4px !important;
+    margin-bottom: 16px !important;
   }
   
   .VPHero .image {
-    margin-top: 16px !important;
+    margin-top: 12px !important;
   }
   
   .VPHero .image .image-src {
-    max-width: 100px !important;
+    max-width: 80px !important;
   }
   
   .VPHero .actions {
@@ -645,11 +642,11 @@ html {
   }
   
   .VPHomeFeatures .container {
-    padding: 0 16px 40px !important;
+    padding: 0 16px 24px !important;
   }
   
   .vp-doc {
-    padding: 20px 16px 40px !important;
+    padding: 20px 16px 24px !important;
     font-size: 15px !important;
   }
   
@@ -674,20 +671,20 @@ html {
   }
   
   .VPFooter {
-    padding: 24px 16px !important;
+    padding: 20px 16px !important;
   }
 }
 
 /* Small mobile */
 @media (max-width: 400px) {
   .VPHero .heading {
-    font-size: 1.5rem !important;
+    font-size: 1.35rem !important;
   }
 }
 
 /* Large desktop */
 @media (min-width: 1280px) {
-  .VPHero .heading { font-size: 4rem !important; }
+  .VPHero .heading { font-size: 3rem !important; }
   .vp-doc { max-width: 80ch !important; }
 }
 
