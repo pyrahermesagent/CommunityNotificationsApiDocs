@@ -401,83 +401,125 @@ body {
   border-radius: 0 !important;
 }
 
-/* Override Prism.js syntax highlighting for better contrast — light colors on dark bg */
-.vp-doc pre[class*="language-"] code .token.comment,
-.vp-doc pre[class*="language-"] code .token.prolog,
-.vp-doc pre[class*="language-"] code .token.doctype,
-.vp-doc pre[class*="language-"] code .token.cdata {
-  color: #94a3b8 !important;
-  font-style: italic !important;
+/* === Override Shiki syntax highlighting for better contrast ===
+   Shiki uses inline --shiki-dark variables on span elements.
+   VitePress default --shiki-dark colors are too dark for readability.
+   Override at root level (no html.dark guard) to affect ALL code blocks regardless of theme. */
+
+html .shiki,
+html .shiki span {
+  color: var(--shiki-dark, #e2e8f0) !important;
+  background-color: transparent !important;
+  font-style: inherit !important;
+  font-weight: inherit !important;
 }
 
-.vp-doc pre[class*="language-"] code .token.punctuation {
-  color: #e2e8f0 !important;
-}
-
-.vp-doc pre[class*="language-"] code .token.boolean,
-.vp-doc pre[class*="language-"] code .token.number {
-  color: #7dd3fc !important;
-  font-weight: 500 !important;
-}
-
-.vp-doc pre[class*="language-"] code .token.property,
-.vp-doc pre[class*="language-"] code .token.variable {
-  color: #7dd3fc !important;
-}
-
-.vp-doc pre[class*="language-"] code .token.keyword {
-  color: #d8b4fe !important;
+/* Keywords (const, let, var, class, def, import, function) */
+html .shiki span[style*="--shiki-dark:#F97583"],
+html .shiki span[style*="--shiki-dark:#f97583"],
+html .shiki span[style*="--shiki-dark:#D73A49"],
+html .shiki span[style*="--shiki-dark:#d73a49"],
+html .shiki span[style*="--shiki-dark:#FF5370"],
+html .shiki span[style*="--shiki-dark:#ff5370"] {
+  color: #f472b6 !important;
   font-weight: 600 !important;
 }
 
-.vp-doc pre[class*="language-"] code .token.string {
-  color: #86efac !important;
+/* Functions (fetch, requests.post, etc.) */
+html .shiki span[style*="--shiki-dark:#B392F0"],
+html .shiki span[style*="--shiki-dark:#b392f0"],
+html .shiki span[style*="--shiki-dark:#6F42C1"],
+html .shiki span[style*="--shiki-dark:#6f42c1"],
+html .shiki span[style*="--shiki-dark:#8A4FFF"] {
+  color: #c084fc !important;
   font-weight: 500 !important;
 }
 
-.vp-doc pre[class*="language-"] code .token.constant {
-  color: #fde68a !important;
-  font-weight: 600 !important;
-}
-
-.vp-doc pre[class*="language-"] code .token.function,
-.vp-doc pre[class*="language-"] code .token.class-name {
-  color: #67e8f9 !important;
+/* Strings (URLs, JSON keys, text) */
+html .shiki span[style*="--shiki-dark:#9ECBFF"],
+html .shiki span[style*="--shiki-dark:#9ecbff"],
+html .shiki span[style*="--shiki-dark:#032F62"],
+html .shiki span[style*="--shiki-dark:#032f62"],
+html .shiki span[style*="--shiki-dark:#42A5F5"] {
+  color: #93c5fd !important;
   font-weight: 500 !important;
 }
 
-.vp-doc pre[class*="language-"] code .token.operator {
-  color: #e2e8f0 !important;
+/* Variable names */
+html .shiki span[style*="--shiki-dark:#79B8FF"],
+html .shiki span[style*="--shiki-dark:#79b8ff"],
+html .shiki span[style*="--shiki-dark:#005CC5"],
+html .shiki span[style*="--shiki-dark:#005cc5"],
+html .shiki span[style*="--shiki-dark:#3794FF"] {
+  color: #93c5fd !important;
 }
 
-.vp-doc pre[class*="language-"] code .token.tag {
-  color: #67e8f9 !important;
-}
-
-.vp-doc pre[class*="language-"] code .token.attr-name {
-  color: #d8b4fe !important;
-  font-weight: 500 !important;
-}
-
-.vp-doc pre[class*="language-"] code .token.attr-value {
-  color: #86efac !important;
-}
-
-.vp-doc pre[class*="language-"] code .token.regex,
-.vp-doc pre[class*="language-"] code .token.char,
-.vp-doc pre[class*="language-"] code .token.selector {
+/* Numbers and booleans */
+html .shiki span[style*="--shiki-dark:#7976FA"],
+html .shiki span[style*="--shiki-dark:#7976fa"],
+html .shiki span[style*="--shiki-dark:#FFA657"],
+html .shiki span[style*="--shiki-dark:#ffa657"] {
   color: #fdba74 !important;
+  font-weight: 500 !important;
 }
 
-.vp-doc pre[class*="language-"] code .token.inserted {
-  background: rgba(134, 239, 172, 0.1);
+/* Operators and punctuation */
+html .shiki span[style*="--shiki-dark:#24292E"],
+html .shiki span[style*="--shiki-dark:#24292e"],
+html .shiki span[style*="--shiki-dark:#E1E4E8"],
+html .shiki span[style*="--shiki-dark:#e1e4e8"],
+html .shiki span[style*="--shiki-dark:#6A737D"],
+html .shiki span[style*="--shiki-dark:#6a737d"] {
+  color: #cbd5e1 !important;
 }
 
-.vp-doc pre[class*="language-"] code .token.deleted {
-  background: rgba(251, 113, 130, 0.1);
+/* YAML/JSON keys (blue tones in Dockerfile, docker-compose, .env) */
+html .shiki span[style*="--shiki-dark:#D73A49"],
+html .shiki span[style*="--shiki-dark:#d73a49"],
+html .shiki span[style*="--shiki-dark:#B5D5F7"],
+html .shiki span[style*="--shiki-dark:#b5d5f7"],
+html .shiki span[style*="--shiki-dark:#ADD6FF"] {
+  color: #93c5fd !important;
+  font-weight: 500 !important;
 }
 
-/* Fix code block text overflow — allow wrapping for long lines */
+/* Bash/shell commands and special tokens */
+html .shiki span[style*="--shiki-dark:#FDFF00"],
+html .shiki span[style*="--shiki-dark:#fdff00"],
+html .shiki span[style*="--shiki-dark:#E2B93D"],
+html .shiki span[style*="--shiki-dark:#e2b93d"],
+html .shiki span[style*="--shiki-dark:#FFA657"],
+html .shiki span[style*="--shiki-dark:#ffa657"] {
+  color: #fde68a !important;
+}
+
+/* Environment variable names and config keys */
+html .shiki span[style*="--shiki-dark:#E1E4E8"],
+html .shiki span[style*="--shiki-dark:#e1e4e8"],
+html .shiki span[style*="--shiki-dark:#FFFFFF"],
+html .shiki span[style*="--shiki-dark:#ffffff"] {
+  color: #f1f5f9 !important;
+}
+
+/* Light-mode specific overrides for Setup Guide */
+html:not(.dark) .shiki span[style*="--shiki-dark:#E1E4E8"],
+html:not(.dark) .shiki span[style*="--shiki-dark:#e1e4e8"],
+html:not(.dark) .shiki span[style*="--shiki-dark:#9ECBFF"],
+html:not(.dark) .shiki span[style*="--shiki-dark:#9ecbff"],
+html:not(.dark) .shiki span[style*="--shiki-dark:#F97583"],
+html:not(.dark) .shiki span[style*="--shiki-dark:#f97583"],
+html:not(.dark) .shiki span[style*="--shiki-dark:#B392F0"],
+html:not(.dark) .shiki span[style*="--shiki-dark:#b392f0"],
+html:not(.dark) .shiki span[style*="--shiki-dark:#79B8FF"],
+html:not(.dark) .shiki span[style*="--shiki-dark:#79b8ff"],
+html:not(.dark) .shiki span[style*="--shiki-dark:#6A737D"],
+html:not(.dark) .shiki span[style*="--shiki-dark:#6a737d"],
+html:not(.dark) .shiki span[style*="--shiki-dark:#FFAB70"],
+html:not(.dark) .shiki span[style*="--shiki-dark:#ffab70"] {
+  color: inherit !important;
+}
+
+/* === Fix code block text overflow — allow wrapping for long lines === */
 .vp-doc pre,
 .vp-doc pre code {
   white-space: pre-wrap !important;
@@ -506,9 +548,6 @@ body {
 .vp-doc table {
   width: 100% !important;
   border-collapse: separate !important;
-  border-spacing: 0 !important;
-  border: 1px solid rgba(0,0,0,0.08) !important;
-  border-radius: 10px !important;
   overflow: hidden !important;
   margin: 18px 0 !important;
   font-size: 0.875rem !important;
