@@ -3,6 +3,7 @@ const path = require('path')
 const fs = require('fs')
 
 const DIST_DIR = path.join(__dirname, '.vitepress', 'dist')
+const BASE = '/CommunityNotificationsApiDocs'
 const PORT = 8765
 
 const MIME_TYPES = {
@@ -20,9 +21,18 @@ const MIME_TYPES = {
 }
 
 const server = http.createServer((req, res) => {
-  let url = req.url === '/' ? '/index.html' : req.url
+  let url = req.url
+  
   // Remove query string
   url = url.split('?')[0]
+  
+  // Strip base path prefix
+  if (url === '/') {
+    url = '/index.html'
+  } else if (url.startsWith(BASE)) {
+    url = url.substring(BASE.length)
+    if (url === '') url = '/index.html'
+  }
   
   const filePath = path.join(DIST_DIR, url)
   const ext = path.extname(filePath)
@@ -30,7 +40,7 @@ const server = http.createServer((req, res) => {
   
   fs.readFile(filePath, (err, data) => {
     if (err) {
-      // Try index.html for fallback routing
+      // Try index.html for fallback routing (SPA-style)
       if (url.endsWith('.html') === false) {
         fs.readFile(path.join(DIST_DIR, 'index.html'), (err2, data2) => {
           if (err2) {
