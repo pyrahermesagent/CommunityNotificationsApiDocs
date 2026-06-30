@@ -83,6 +83,15 @@ body {
   flex-direction: column;
 }
 
+/* Prevent sticky nav from overlapping page content */
+.VPPage {
+  padding-top: 64px !important;
+}
+
+.VPHome {
+  padding-top: 0 !important;
+}
+
 /* Remove VPHome bottom margin (128px VitePress default) */
 .VPHome {
   margin-bottom: 0 !important;
@@ -91,6 +100,12 @@ body {
 /* Hero section — tighter spacing */
 .VPHero {
   padding: 40px 0 20px !important;
+  margin-top: 0 !important;
+}
+
+/* Reset hero margin specifically on home page (was -64px pushing behind nav) */
+.VPHome .VPHero {
+  margin-top: 0 !important;
 }
 
 .VPHero .main {
@@ -626,7 +641,8 @@ html .shiki span[style*="--shiki-dark:#ffffff"] {
 
 /* === Tables — better mobile support === */
 .vp-doc table {
-  width: 100% !important;
+  width: max-content !important;
+  min-width: 100% !important;
   border-collapse: separate !important;
   margin: 18px 0 !important;
   font-size: 0.875rem !important;
@@ -640,6 +656,14 @@ html .shiki span[style*="--shiki-dark:#ffffff"] {
   width: auto !important;
   min-width: 100% !important;
   display: inline-table !important;
+}
+
+/* Prevent table overflow in content containers */
+.vp-doc .content-container table,
+.vp-doc .content-body table,
+.vp-doc .container table {
+  max-width: 100% !important;
+  overflow: hidden !important;
 }
 
 .dark .vp-doc table {
