@@ -415,83 +415,93 @@ html .shiki span {
   font-weight: inherit !important;
 }
 
+/* === Light-mode code blocks — background + darker text === */
+html:not(.dark) .vp-code,
+html:not(.dark) .vp-code pre,
+html:not(.dark) .vp-code code {
+  background: #f8fafc !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+html:not(.dark) .shiki,
+html:not(.dark) .shiki span {
+  color: #1e293b !important;
+  background-color: transparent !important;
+  font-style: inherit !important;
+  font-weight: inherit !important;
+}
+
 /* === Light-mode Shiki overrides (light colors on white bg = low contrast) === */
 /* Comments */
-html .shiki span[style*="--shiki-light:#6A737D"],
-html .shiki span[style*="--shiki-light:#6a737d"],
-html .shiki span[style*="--shiki-light:#94a3b8"],
-html .shiki span[style*="--shiki-light:#9399a2"] {
-  color: #475569 !important;
+html:not(.dark) .shiki span[style*="--shiki-light:#6A737D"],
+html:not(.dark) .shiki span[style*="--shiki-light:#6a737d"],
+html:not(.dark) .shiki span[style*="--shiki-light:#94a3b8"],
+html:not(.dark) .shiki span[style*="--shiki-light:#9399a2"] {
+  color: #64748b !important;
   font-style: italic !important;
 }
 
 /* Keys / variable names (orange in light mode: #E36209) */
-html .shiki span[style*="--shiki-light:#E36209"],
-html .shiki span[style*="--shiki-light:#e36209"],
-html .shiki span[style*="--shiki-light:#D73A49"],
-html .shiki span[style*="--shiki-light:#d73a49"],
-html .shiki span[style*="--shiki-light:#FF5370"],
-html .shiki span[style*="--shiki-light:#ff5370"],
-html .shiki span[style*="--shiki-light:#E00"] {
+html:not(.dark) .shiki span[style*="--shiki-light:#E36209"],
+html:not(.dark) .shiki span[style*="--shiki-light:#e36209"],
+html:not(.dark) .shiki span[style*="--shiki-light:#D73A49"],
+html:not(.dark) .shiki span[style*="--shiki-light:#d73a49"],
+html:not(.dark) .shiki span[style*="--shiki-light:#FF5370"],
+html:not(.dark) .shiki span[style*="--shiki-light:#ff5370"],
+html:not(.dark) .shiki span[style*="--shiki-light:#E00"] {
   color: #d946ef !important;
   font-weight: 600 !important;
 }
 
-/* Equals / punctuation */
-html .shiki span[style*="--shiki-light:#032F62"],
-html .shiki span[style*="--shiki-light:#032f62"],
-html .shiki span[style*="--shiki-light:#D73A49"],
-html .shiki span[style*="--shiki-light:#d73a49"],
-html .shiki span[style*="--shiki-light:#24292E"],
-html .shiki span[style*="--shiki-light:#24292e"],
-html .shiki span[style*="--shiki-light:#E1E4E8"],
-html .shiki span[style*="--shiki-light:#e1e4e8"] {
+/* General text / punctuation (light gray in light mode) */
+html:not(.dark) .shiki span[style*="--shiki-light:#24292E"],
+html:not(.dark) .shiki span[style*="--shiki-light:#24292e"],
+html:not(.dark) .shiki span[style*="--shiki-light:#E1E4E8"],
+html:not(.dark) .shiki span[style*="--shiki-light:#e1e4e8"] {
   color: #334155 !important;
 }
 
-/* Values (dark gray in light mode: #24292E) */
-html .shiki span[style*="--shiki-light:#24292E"],
-html .shiki span[style*="--shiki-light:#24292e"],
-html .shiki span[style*="--shiki-light:#FFFFFF"],
-html .shiki span[style*="--shiki-light:#ffffff"] {
+/* Values (dark gray in light mode) */
+html:not(.dark) .shiki span[style*="--shiki-light:#FFFFFF"],
+html:not(.dark) .shiki span[style*="--shiki-light:#ffffff"] {
   color: #0f172a !important;
   font-weight: 500 !important;
 }
 
-/* Strings (blue in light mode: #032F62) */
-html .shiki span[style*="--shiki-light:#032F62"],
-html .shiki span[style*="--shiki-light:#032f62"],
-html .shiki span[style*="--shiki-light:#42A5F5"],
-html .shiki span[style*="--shiki-light:#42a5f5"] {
+/* Strings (blue in light mode) */
+html:not(.dark) .shiki span[style*="--shiki-light:#032F62"],
+html:not(.dark) .shiki span[style*="--shiki-light:#032f62"],
+html:not(.dark) .shiki span[style*="--shiki-light:#42A5F5"],
+html:not(.dark) .shiki span[style*="--shiki-light:#42a5f5"] {
   color: #1d4ed8 !important;
   font-weight: 500 !important;
 }
 
-/* Bash commands (purple in light mode: #6F42C1) */
-html .shiki span[style*="--shiki-light:#6F42C1"],
-html .shiki span[style*="--shiki-light:#6f42c1"],
-html .shiki span[style*="--shiki-light:#B392F0"],
-html .shiki span[style*="--shiki-light:#b392f0"] {
+/* Bash commands (purple in light mode) */
+html:not(.dark) .shiki span[style*="--shiki-light:#6F42C1"],
+html:not(.dark) .shiki span[style*="--shiki-light:#6f42c1"],
+html:not(.dark) .shiki span[style*="--shiki-light:#B392F0"],
+html:not(.dark) .shiki span[style*="--shiki-light:#b392f0"] {
   color: #7c3aed !important;
   font-weight: 600 !important;
 }
 
-/* Bash args (blue in light mode: #005CC5 / #79B8FF) */
-html .shiki span[style*="--shiki-light:#005CC5"],
-html .shiki span[style*="--shiki-light:#005cc5"],
-html .shiki span[style*="--shiki-light:#79B8FF"],
-html .shiki span[style*="--shiki-light:#79b8ff"],
-html .shiki span[style*="--shiki-light:#3794FF"],
-html .shiki span[style*="--shiki-light:#3794ff"] {
+/* Bash args (blue in light mode) */
+html:not(.dark) .shiki span[style*="--shiki-light:#005CC5"],
+html:not(.dark) .shiki span[style*="--shiki-light:#005cc5"],
+html:not(.dark) .shiki span[style*="--shiki-light:#79B8FF"],
+html:not(.dark) .shiki span[style*="--shiki-light:#79b8ff"],
+html:not(.dark) .shiki span[style*="--shiki-light:#3794FF"],
+html:not(.dark) .shiki span[style*="--shiki-light:#3794ff"] {
   color: #2563eb !important;
   font-weight: 500 !important;
 }
 
-/* Orange tokens (FFAB70 in dark mode) */
-html .shiki span[style*="--shiki-dark:#FFAB70"],
-html .shiki span[style*="--shiki-dark:#ffab70"],
-html .shiki span[style*="--shiki-light:#FFA657"],
-html .shiki span[style*="--shiki-light:#ffa657"] {
+/* Orange tokens */
+html:not(.dark) .shiki span[style*="--shiki-dark:#FFAB70"],
+html:not(.dark) .shiki span[style*="--shiki-dark:#ffab70"],
+html:not(.dark) .shiki span[style*="--shiki-light:#FFA657"],
+html:not(.dark) .shiki span[style*="--shiki-light:#ffa657"] {
   color: #ea580c !important;
   font-weight: 600 !important;
 }
@@ -630,12 +640,13 @@ html .shiki span[style*="--shiki-dark:#ffffff"] {
 .vp-doc table th {
   background: rgba(59,130,246,0.06) !important;
   font-weight: 600 !important;
-  padding: 12px 14px !important;
+  padding: 8px 10px !important;
   text-align: left !important;
   border-bottom: 2px solid rgba(59,130,246,0.12) !important;
   color: var(--vp-c-text-1) !important;
-  white-space: normal !important;
-  word-break: break-word !important;
+  white-space: nowrap !important;
+  min-width: 70px !important;
+  font-size: 0.75rem !important;
 }
 
 .dark .vp-doc table th {
