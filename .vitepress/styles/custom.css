@@ -793,15 +793,41 @@ html .shiki span[style*="--shiki-dark:#ffffff"] {
   font-weight: 500 !important;
 }
 
+/* === Reduce home page footer gap === */
+.VPHome .VPFooter {
+  position: static !important;
+  margin-top: 16px !important;
+}
+
+/* Remove large viewport-height gap on home page */
+.VPHome {
+  min-height: auto !important;
+  margin-bottom: 0 !important;
+}
+
+/* Remove the flex container's forced height — this is the key fix for the footer gap */
+.VPContent.is-home {
+  flex-grow: 0 !important;
+  height: auto !important;
+}
+
+/* Remove the 720px minHeight from VitePress Layout component on home page */
+body .VPHome ~ .Layout,
+body .Layout:has(.VPHome) {
+  min-height: auto !important;
+  height: auto !important;
+}
+
 /* === Content container === */
 .vp-doc.container {
   max-width: 800px !important;
   margin: 0 auto !important;
-  padding: 40px 28px 36px !important;
+  padding: 40px 28px 20px !important;
 }
 
 .VPHome .vp-doc.container {
   padding-top: 0 !important;
+  padding-bottom: 8px !important;
 }
 
 /* === Home page feature section === */
@@ -1036,12 +1062,6 @@ html .shiki span[style*="--shiki-dark:#ffffff"] {
   max-width: none !important;
 }
 
-.VPToc a:hover {
-  color: var(--vp-c-brand) !important;
-  border-left-color: var(--vp-c-brand-light) !important;
-  background: rgba(59,130,246,0.03) !important;
-}
-
 .VPToc a.active {
   color: var(--vp-c-brand) !important;
   font-weight: 600 !important;
@@ -1078,6 +1098,9 @@ html .shiki span[style*="--shiki-dark:#ffffff"] {
   transition: opacity 0.2s !important;
 }
 
+.VPSkipLink:focus {
+  opacity: 1 !important;
+}
 .VPSkipLink:focus {
   opacity: 1 !important;
 }
