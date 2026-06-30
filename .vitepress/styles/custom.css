@@ -633,6 +633,13 @@ html .shiki span[style*="--shiki-dark:#ffffff"] {
   box-shadow: 0 1px 3px rgba(0,0,0,0.04) !important;
   overflow-x: auto !important;
   -webkit-overflow-scrolling: touch !important;
+  table-layout: auto !important;
+}
+
+.vp-doc table table {
+  width: auto !important;
+  min-width: 100% !important;
+  display: inline-table !important;
 }
 
 .dark .vp-doc table {
@@ -662,6 +669,19 @@ html .shiki span[style*="--shiki-dark:#ffffff"] {
 
 .dark .vp-doc table td {
   border-bottom-color: rgba(255,255,255,0.05) !important;
+}
+
+/* Wider min-widths for description/meaning columns */
+.vp-doc table td:nth-child(3),
+.vp-doc table td:nth-child(4) {
+  min-width: 150px !important;
+  white-space: normal !important;
+  word-break: break-word !important;
+}
+
+.dark .vp-doc table td:nth-child(3),
+.dark .vp-doc table td:nth-child(4) {
+  white-space: normal !important;
 }
 
 .vp-doc table tr:last-child td {
