@@ -68,10 +68,11 @@ body {
 @media (min-width: 769px) {
   .VPNavBarTitle .title {
     white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    max-width: 200px !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    max-width: none !important;
     min-width: 0 !important;
+    font-size: 1rem !important;
   }
 }
 
