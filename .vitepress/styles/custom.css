@@ -659,6 +659,8 @@ html .shiki span[style*="--shiki-dark:#ffffff"] {
   border-bottom: 1px solid rgba(0,0,0,0.05) !important;
   color: var(--vp-c-text-2) !important;
   vertical-align: middle !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
 }
 
 .dark .vp-doc table td {
@@ -723,6 +725,7 @@ html .shiki span[style*="--shiki-dark:#ffffff"] {
   border-right: 1px solid rgba(0,0,0,0.06) !important;
   background: rgba(249, 250, 251, 0.95) !important;
   backdrop-filter: blur(15px);
+  overflow-y: auto !important;
 }
 
 .dark .VPSidebar {
