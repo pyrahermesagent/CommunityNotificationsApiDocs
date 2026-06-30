@@ -8,10 +8,10 @@ module.exports = {
   base: '/CommunityNotificationsApiDocs/',
   title: 'CommunityNotificationsAPI',
   description: 'Notifications REST API Template — Documentation',
-  logo: '/plutolabs-logo-lines.svg',
+  logo: '/CommunityNotificationsApiDocs/plutolabs-logo-lines.svg',
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/plutolabs-logo-lines.svg' }],
-    ['link', { rel: 'apple-touch-icon', href: '/plutolabs-logo-lines.svg' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/CommunityNotificationsApiDocs/plutolabs-logo-lines.svg' }],
+    ['link', { rel: 'apple-touch-icon', href: '/CommunityNotificationsApiDocs/plutolabs-logo-lines.svg' }],
     ['style', {}, `<style>
       .VPNavBarTitle img {
         height: 28px !important;
