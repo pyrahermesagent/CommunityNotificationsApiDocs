@@ -22,7 +22,7 @@ This REST API provides a complete notification system for mobile applications. I
 
 The device registration process involves several security steps:
 
-### Step 1: Request a Nonce
+**Step 1: Request a Nonce**
 
 The mobile app first requests a nonce (number used once) from the server:
 
@@ -32,7 +32,7 @@ POST /api/nonce/
 
 The server generates a cryptographically secure random nonce and stores it in the database with an expiration time (2 minutes by default).
 
-### Step 2: Device Attestation
+**Step 2: Device Attestation**
 
 The app then registers the device with attestation:
 
@@ -57,7 +57,7 @@ POST /api/token/
 - The server verifies the attestation and stores the device's public key
 - Subsequent registrations: Uses the stored public key for assertion verification (faster)
 
-### Step 3: Receive JWT Tokens
+**Step 3: Receive JWT Tokens**
 
 Upon successful registration, the server returns:
 
@@ -73,13 +73,10 @@ Upon successful registration, the server returns:
 
 ## How Notifications Are Sent
 
-### Workflow
-
 1. Backend service calls the notification endpoint with an API key:
    ```
    POST /api/fcm/send-notification/
-   X-API-Key: <your_api_key>
-   {
+   X-API-Key: <your_api_key>   {
      "user_id": "user123",
      "title": "New Message",
      "body": "You have a new message!"
@@ -99,7 +96,7 @@ Upon successful registration, the server returns:
    }
    ```
 
-### Device-User Relationship
+**Device-User Relationship**
 
 Each registered device is associated with a `uid` (user identifier). This could be:
 - A wallet address (for blockchain apps)
