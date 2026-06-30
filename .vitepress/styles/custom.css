@@ -220,18 +220,95 @@ body {
   color: var(--vp-c-brand-light) !important;
 }
 
-/* === Feature Cards === */
+/* === Fix duplicate nav branding — hide the repeated site title in nav === */
+.VPNavBarTitle .title .text {
+  display: none !important;
+}
+
+/* === Align feature card icons with text (left-align both) === */
+.VPFeature .box {
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+.VPFeature .icon {
+  align-self: flex-start !important;
+  justify-content: flex-start !important;
+  padding-left: 2px !important;
+}
+
+/* === Reduce feature card height — less dead space === */
 .VPFeature {
-  border: 1px solid rgba(0,0,0,0.08) !important;
-  border-radius: 14px !important;
-  padding: 24px 22px !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  background: rgba(255, 255, 255, 0.9) !important;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
-  display: flex !important;
-  flex-direction: column !important;
-  height: 100% !important;
-  margin-bottom: 0 !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+/* === Improve code block language label contrast === */
+.vp-code-lang,
+.vp-doc .vp-code div[class*="lang"] {
+  background: rgba(0,0,0,0.5) !important;
+  color: #f1f5f9 !important;
+  font-weight: 600 !important;
+  font-size: 0.7rem !important;
+  padding: 3px 10px !important;
+  border-radius: 5px !important;
+  letter-spacing: 0.03em !important;
+}
+
+.dark .vp-code-lang,
+.dark .vp-doc .vp-code div[class*="lang"] {
+  background: rgba(255,255,255,0.15) !important;
+  color: #cbd5e1 !important;
+}
+
+/* === Improve code block background contrast === */
+.vp-doc pre,
+.vp-doc pre[class*="language-"] {
+  border: 1px solid rgba(59,130,246,0.1) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+}
+
+.dark .vp-doc pre,
+.dark .vp-doc pre[class*="language-"] {
+  border-color: rgba(59,130,246,0.15) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3) !important;
+}
+
+/* === Fix mobile Setup Guide — awkward text wrapping in bullet lists === */
+.vp-doc ul li,
+.vp-doc ol li {
+  hyphens: none;
+  -webkit-hyphens: none;
+  text-align: left;
+  line-height: 1.65;
+}
+
+/* === Improve faint section dividers — make them more visible === */
+.vp-doc hr {
+  border-color: rgba(0,0,0,0.08) !important;
+  border-width: 1px !important;
+  margin: 24px 0 !important;
+}
+
+/* === Fix "On this page >" dropdown on mobile — make it look clickable === */
+.vp-navbar-actions .item.button:has(.icon) {
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.2s;
+  display: inline-flex;
+  align-items: center;
+}
+
+.vp-navbar-actions .item.button:has(.icon):hover {
+  background: rgba(0,0,0,0.05);
+}
+
+/* === Prevent orphans in list items === */
+.vp-doc li {
+  break-inside: avoid;
+  orphans: 2;
+  widows: 2;
 }
 
 .dark .VPFeature {
