@@ -779,6 +779,11 @@ html .shiki span[style*="--shiki-dark:#ffffff"] {
   display: none !important;
 }
 
+.VPFooter a {
+  color: var(--vp-c-brand) !important;
+  font-weight: 500 !important;
+}
+
 /* === Content container === */
 .vp-doc.container {
   max-width: 800px !important;
@@ -1009,6 +1014,8 @@ html .shiki span[style*="--shiki-dark:#ffffff"] {
   color: var(--vp-c-text-2) !important;
   font-size: 0.8125rem !important;
   line-height: 1.5 !important;
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
 }
 
 .VPToc a:hover {
