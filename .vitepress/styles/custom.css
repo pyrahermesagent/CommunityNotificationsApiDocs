@@ -401,7 +401,7 @@ body {
   border-radius: 0 !important;
 }
 
-/* Override Prism.js syntax highlighting for better contrast */
+/* Override Prism.js syntax highlighting for better contrast — light colors on dark bg */
 .vp-doc pre[class*="language-"] code .token.comment,
 .vp-doc pre[class*="language-"] code .token.prolog,
 .vp-doc pre[class*="language-"] code .token.doctype,
@@ -411,66 +411,66 @@ body {
 }
 
 .vp-doc pre[class*="language-"] code .token.punctuation {
-  color: #cbd5e1 !important;
+  color: #e2e8f0 !important;
 }
 
 .vp-doc pre[class*="language-"] code .token.boolean,
 .vp-doc pre[class*="language-"] code .token.number {
-  color: #38bdf8 !important;
+  color: #7dd3fc !important;
   font-weight: 500 !important;
 }
 
 .vp-doc pre[class*="language-"] code .token.property,
 .vp-doc pre[class*="language-"] code .token.variable {
-  color: #38bdf8 !important;
+  color: #7dd3fc !important;
 }
 
 .vp-doc pre[class*="language-"] code .token.keyword {
-  color: #c084fc !important;
+  color: #d8b4fe !important;
   font-weight: 600 !important;
 }
 
 .vp-doc pre[class*="language-"] code .token.string {
-  color: #4ade80 !important;
+  color: #86efac !important;
   font-weight: 500 !important;
 }
 
 .vp-doc pre[class*="language-"] code .token.constant {
-  color: #fbbf24 !important;
+  color: #fde68a !important;
   font-weight: 600 !important;
 }
 
 .vp-doc pre[class*="language-"] code .token.function,
 .vp-doc pre[class*="language-"] code .token.class-name {
-  color: #22d3ee !important;
+  color: #67e8f9 !important;
   font-weight: 500 !important;
 }
 
 .vp-doc pre[class*="language-"] code .token.operator {
-  color: #cbd5e1 !important;
+  color: #e2e8f0 !important;
 }
 
 .vp-doc pre[class*="language-"] code .token.tag {
-  color: #22d3ee !important;
+  color: #67e8f9 !important;
 }
 
 .vp-doc pre[class*="language-"] code .token.attr-name {
-  color: #c084fc !important;
+  color: #d8b4fe !important;
   font-weight: 500 !important;
 }
 
 .vp-doc pre[class*="language-"] code .token.attr-value {
-  color: #4ade80 !important;
+  color: #86efac !important;
 }
 
 .vp-doc pre[class*="language-"] code .token.regex,
 .vp-doc pre[class*="language-"] code .token.char,
 .vp-doc pre[class*="language-"] code .token.selector {
-  color: #fb923c !important;
+  color: #fdba74 !important;
 }
 
 .vp-doc pre[class*="language-"] code .token.inserted {
-  background: rgba(74, 222, 128, 0.1);
+  background: rgba(134, 239, 172, 0.1);
 }
 
 .vp-doc pre[class*="language-"] code .token.deleted {

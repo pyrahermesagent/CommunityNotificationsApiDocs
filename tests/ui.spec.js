@@ -42,7 +42,8 @@ PAGES.forEach(page => {
           await playwrightPage.setViewportSize({ width: vp.width, height: vp.height })
           await playwrightPage.goto(BASE_URL + page.path)
           await playwrightPage.waitForLoadState('networkidle')
-          await playwrightPage.waitForTimeout(1000)
+          // Wait for Vue client-side rendering to fully complete
+          await playwrightPage.waitForTimeout(2000)
           
           // Check for common visual bugs
           // 1. Check no horizontal overflow
@@ -116,7 +117,8 @@ PAGES.forEach(page => {
           await playwrightPage.setViewportSize({ width: vp.width, height: vp.height })
           await playwrightPage.goto(BASE_URL + page.path)
           await playwrightPage.waitForLoadState('networkidle')
-          await playwrightPage.waitForTimeout(1000)
+          // Wait for Vue client-side rendering to fully complete
+          await playwrightPage.waitForTimeout(2000)
           
           // Check for common visual bugs
           const hasContent = await playwrightPage.evaluate(() => document.body.textContent.length > 0)
@@ -169,7 +171,8 @@ PAGES.forEach(page => {
         })
         await playwrightPage.goto(BASE_URL + page.path)
         await playwrightPage.waitForLoadState('networkidle')
-        await playwrightPage.waitForTimeout(1000)
+        // Wait for Vue client-side rendering to fully complete
+        await playwrightPage.waitForTimeout(2000)
         
         const hasContent = await playwrightPage.evaluate(() => document.body.textContent.length > 0)
         expect(hasContent).toBe(true)
