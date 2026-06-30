@@ -848,6 +848,21 @@ html .shiki span[style*="--shiki-dark:#ffffff"] {
   margin-bottom: 4px !important;
 }
 
+/* === Fix nav branding === */
+/* VitePress title span (first text copy) — use nth-child to target the plain span */
+.VPNavBarTitle .title > span {
+  display: none !important;
+}
+/* Nav brand text span (second text copy) */
+.nav-title {
+  display: none !important;
+}
+/* Nav brand div — keep only the logo image, center it */
+.nav-brand {
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
 /* === Sidebar === */
 .VPSidebar {
   border-right: 1px solid rgba(0,0,0,0.06) !important;
