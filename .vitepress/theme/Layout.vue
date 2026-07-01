@@ -21,91 +21,108 @@ const { site, isDark } = useData()
 </template>
 
 <style>
-/* Hide VitePress default title copies */
-.VPNavBarTitle .title > span {
-  display: none !important;
-}
-.VPNavBarTitle .title .text {
-  display: none !important;
-}
-
-/* Nav brand styles */
+/* ========== Nav Brand ========== */
 .nav-brand {
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  font-weight: 700 !important;
-  font-size: 1.15rem !important;
-  white-space: nowrap !important;
-  flex-shrink: 0 !important;
-  min-width: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  line-height: 1 !important;
-}
-
-/* Force nav-title to display with dimensions */
-.nav-title {
-  display: inline !important;
-  white-space: nowrap !important;
-  overflow: visible !important;
-  text-overflow: clip !important;
-  max-width: none !important;
-  min-width: 0 !important;
-  width: auto !important;
-  font-weight: 700 !important;
-  font-size: inherit !important;
-  color: var(--vp-c-text-1) !important;
-  font-family: inherit !important;
-  letter-spacing: inherit !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  z-index: 1 !important;
-  position: relative !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  white-space: nowrap;
 }
 
 .nav-logo {
-  height: 28px !important;
-  width: auto !important;
-  object-fit: contain !important;
-  flex-shrink: 0 !important;
-  display: block !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
 }
 
-/* Make sure parent containers don't hide the nav-title */
+.nav-logo:hover {
+  transform: scale(1.05);
+}
+
+.nav-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+}
+
+/* Hide the redundant VitePress default title (the site name that VitePress auto-inserts) */
+.VPNavBarTitle .title span:first-child {
+  display: none !important;
+}
+
+/* ========== Header overflow fix ========== */
+/* Override the gradient text effect that VitePress gives the title span */
 .VPNavBarTitle .title {
-  overflow: visible !important;
-  max-width: none !important;
-  min-width: 0 !important;
+  background: none !important;
+  -webkit-background-clip: none !important;
+  -webkit-text-fill-color: unset !important;
+  background-clip: none !important;
 }
 
+.VPNavBarTitle .title a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ========== Hero centering ========== */
+.VPHero .main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.VPHero .heading {
+  text-align: center;
+}
+
+.VPHero .tagline {
+  text-align: center;
+}
+
+.VPHero .actions {
+  justify-content: center;
+}
+
+/* ========== Feature cards centering ========== */
+.VPHomeFeatures .container {
+  display: flex;
+  justify-content: center;
+}
+
+/* ========== Mobile ========== */
 @media (max-width: 768px) {
   .nav-brand {
-    gap: 6px !important;
-    font-size: 1rem !important;
+    gap: 6px;
+    font-size: 1rem;
   }
+  
   .nav-logo {
-    height: 24px !important;
+    height: 24px;
   }
+  
   .nav-title {
-    font-size: 0.85rem !important;
+    display: none;
   }
 }
 
 @media (max-width: 400px) {
   .nav-brand {
-    gap: 4px !important;
+    gap: 4px;
   }
+  
   .nav-logo {
-    height: 22px !important;
+    height: 22px;
   }
-}
-
-/* Hero image styling */
-.VPHero .image img {
-  max-width: 200px !important;
-  height: auto !important;
 }
 </style>
