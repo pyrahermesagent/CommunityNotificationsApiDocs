@@ -39,13 +39,29 @@ const { site, isDark } = useData()
   white-space: nowrap !important;
   flex-shrink: 0 !important;
   min-width: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1 !important;
 }
 
+/* Force nav-title to display with dimensions */
 .nav-title {
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  white-space: nowrap !important;
   display: inline !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  width: auto !important;
+  font-weight: 700 !important;
+  font-size: inherit !important;
+  color: var(--vp-c-text-1) !important;
+  font-family: inherit !important;
+  letter-spacing: inherit !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 1 !important;
+  position: relative !important;
 }
 
 .nav-logo {
@@ -54,6 +70,15 @@ const { site, isDark } = useData()
   object-fit: contain !important;
   flex-shrink: 0 !important;
   display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Make sure parent containers don't hide the nav-title */
+.VPNavBarTitle .title {
+  overflow: visible !important;
+  max-width: none !important;
+  min-width: 0 !important;
 }
 
 @media (max-width: 768px) {
