@@ -6,7 +6,7 @@ hero:
   text: Documentation
   tagline: A Notifications REST API Template for PlutoFramework with Firebase Cloud Messaging and device attestation
   image:
-    src: /plutolabs-logo-lines.svg
+    src: /logo-lines-rounded-black.svg
     alt: PlutoFramework Logo
   actions:
     - theme: brand
