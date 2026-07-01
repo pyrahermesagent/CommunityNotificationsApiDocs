@@ -864,19 +864,43 @@ html .shiki span[style*="--shiki-dark:#ffffff"] {
   margin-bottom: 4px !important;
 }
 
-/* === Fix nav branding === */
-/* VitePress title span (first text copy) — use nth-child to target the plain span */
+/* === Show nav title and constrain width to prevent overflow === */
+/* Allow VitePress title span (first text copy) */
 .VPNavBarTitle .title > span {
-  display: none !important;
+  display: inline !important;
 }
-/* Nav brand text span (second text copy) */
+/* Show the nav brand title */
 .nav-title {
-  display: none !important;
+  display: inline !important;
 }
-/* Nav brand div — keep only the logo image, center it */
+/* Nav brand div — constrain width and use overflow handling */
 .nav-brand {
   display: inline-flex !important;
   align-items: center !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+/* Constrain the nav title area so content doesn't overflow */
+.VPNavBarTitle {
+  flex-shrink: 0 !important;
+  min-width: 0 !important;
+}
+.VPNavBarTitle .title {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  max-width: 100% !important;
+}
+/* Ensure the nav bar itself handles overflow gracefully */
+.VPNavBar.has-sidebar .content {
+  max-width: 100% !important;
+}
+.VPNavBar:not(.has-sidebar) {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
 }
 
 /* === Sidebar === */

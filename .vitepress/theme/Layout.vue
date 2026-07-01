@@ -2,7 +2,7 @@
 import DefaultTheme from 'vitepress/theme'
 import { useData } from 'vitepress'
 
-const { site } = useData()
+const { site, isDark } = useData()
 </script>
 
 <template>
@@ -10,7 +10,7 @@ const { site } = useData()
     <template #nav-bar-title-after>
       <div class="nav-brand">
         <img
-          src="/plutolabs-logo-lines.svg"
+          :src="isDark ? '/logo-lines-rounded-white.svg' : '/logo-lines-rounded-black.svg'"
           alt="PlutoFramework"
           class="nav-logo"
         />
@@ -56,7 +56,7 @@ const { site } = useData()
   }
   
   .nav-title {
-    display: none;
+    font-size: 0.85rem;
   }
 }
 
