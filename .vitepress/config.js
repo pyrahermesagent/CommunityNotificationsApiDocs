@@ -12,24 +12,8 @@ module.exports = {
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/CommunityNotificationsApiDocs/plutolabs-logo-lines.svg' }],
     ['link', { rel: 'apple-touch-icon', href: '/CommunityNotificationsApiDocs/plutolabs-logo-lines.svg' }],
-    ['style', {}, `<style>
-      .VPNavBarTitle img {
-        height: 28px !important;
-        width: auto !important;
-        object-fit: contain !important;
-        margin-right: 8px !important;
-      }
-    </style>`]
+    ['style', {}, `<style>${customCSS}</style>`]
   ],
-  vite: {
-    css: {
-      preprocessorOptions: {
-        css: {
-          additionalData: customCSS
-        }
-      }
-    }
-  },
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },

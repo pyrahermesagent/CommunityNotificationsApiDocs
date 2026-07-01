@@ -20,53 +20,67 @@ const { site, isDark } = useData()
   </DefaultTheme.Layout>
 </template>
 
-<style scoped>
+<style>
+/* Hide VitePress default title copies */
+.VPNavBarTitle .title > span {
+  display: none !important;
+}
+.VPNavBarTitle .title .text {
+  display: none !important;
+}
+
+/* Nav brand styles */
 .nav-brand {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 700;
-  font-size: 1.15rem;
-}
-
-.nav-logo {
-  height: 28px;
-  width: auto;
-  object-fit: contain;
-  flex-shrink: 0;
-  transition: transform 0.2s ease;
-}
-
-.nav-logo:hover {
-  transform: scale(1.05);
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-weight: 700 !important;
+  font-size: 1.15rem !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  min-width: 0 !important;
 }
 
 .nav-title {
-  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  display: inline !important;
+}
+
+.nav-logo {
+  height: 28px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  flex-shrink: 0 !important;
+  display: block !important;
 }
 
 @media (max-width: 768px) {
   .nav-brand {
-    gap: 6px;
-    font-size: 1rem;
+    gap: 6px !important;
+    font-size: 1rem !important;
   }
-  
   .nav-logo {
-    height: 24px;
+    height: 24px !important;
   }
-  
   .nav-title {
-    font-size: 0.85rem;
+    font-size: 0.85rem !important;
   }
 }
 
 @media (max-width: 400px) {
   .nav-brand {
-    gap: 4px;
+    gap: 4px !important;
   }
-  
   .nav-logo {
-    height: 22px;
+    height: 22px !important;
   }
+}
+
+/* Hero image styling */
+.VPHero .image img {
+  max-width: 200px !important;
+  height: auto !important;
 }
 </style>

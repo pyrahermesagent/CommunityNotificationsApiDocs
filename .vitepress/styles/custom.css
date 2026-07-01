@@ -864,11 +864,14 @@ html .shiki span[style*="--shiki-dark:#ffffff"] {
   margin-bottom: 4px !important;
 }
 
-/* === Show nav title and constrain width to prevent overflow === */
-/* Allow VitePress title span (first text copy) */
+/* === Hide VitePress default title, show only our custom brand === */
 .VPNavBarTitle .title > span {
-  display: inline !important;
+  display: none !important;
 }
+.VPNavBarTitle .title .text {
+  display: none !important;
+}
+/* === Show nav title and constrain width to prevent overflow === */
 /* Show the nav brand title */
 .nav-title {
   display: inline !important;
