@@ -1,9 +1,3 @@
-const fs = require('fs')
-const path = require('path')
-
-const cssPath = path.join(__dirname, 'styles', 'custom.css')
-const customCSS = fs.readFileSync(cssPath, 'utf8')
-
 module.exports = {
   base: '/CommunityNotificationsApiDocs/',
   title: 'CommunityNotificationsAPI',
@@ -12,7 +6,7 @@ module.exports = {
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/CommunityNotificationsApiDocs/plutolabs-logo-lines.svg' }],
     ['link', { rel: 'apple-touch-icon', href: '/CommunityNotificationsApiDocs/plutolabs-logo-lines.svg' }],
-    ['style', {}, `<style>${customCSS}</style>`]
+    ['link', { rel: 'stylesheet', href: '/CommunityNotificationsApiDocs/custom.css' }]
   ],
   themeConfig: {
     nav: [

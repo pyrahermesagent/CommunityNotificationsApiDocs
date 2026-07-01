@@ -315,7 +315,6 @@ section.VPHero .container .main .heading .name {
 .VPNavBarLanguage,
 .VPNavBarExtras {
   display: none !important;
-  visibility: hidden !important;
 }
 
 /* === Hide remaining nav clutter === */
@@ -324,7 +323,6 @@ section.VPHero .container .main .heading .name {
 .outline-title,
 .outline-label {
   display: none !important;
-  visibility: hidden !important;
 }
 
 /* === Hide hero Documentation subtitle === */
@@ -372,7 +370,6 @@ section.VPHero .container .main .heading .name {
 .outline-title,
 .outline-label {
   display: none !important;
-  visibility: hidden !important;
 }
 
 /* Hide the default nav title text that shows site name */
@@ -384,7 +381,6 @@ section.VPHero .container .main .heading .name {
 /* Hide the "Appearance" toggle */
 .VPNavBarAppearance {
   display: none !important;
-  visibility: hidden !important;
 }
 
 /* Hide social links if any */
@@ -418,7 +414,6 @@ section.VPHero .container .main .heading .name {
 /* Hide the "Appearance" toggle */
 .VPNavBarAppearance {
   display: none !important;
-  visibility: hidden !important;
 }
 
 /* Hide social links */

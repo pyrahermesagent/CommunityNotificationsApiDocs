@@ -8,7 +8,6 @@ hero:
   image:
     src: /logo-lines-rounded-white.svg
     alt: PlutoFramework Logo
-    dark: /logo-lines-rounded-black.svg
   actions:
     - theme: brand
       text: Get Started
